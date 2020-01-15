@@ -56,24 +56,23 @@ body {
     width: 0;
     height: 0;
     opacity: 0;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.699);
     border-radius: 5px;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: 10% 10% 60% 20%;
     grid-template-areas: 
-    ". h h h h h ."
+    "h h h h h h h"
     ". . co co co . ."
     "o o o o o o o"
-    ". c c c c c ."
-    ". . . p . . ."
+    ". . p p p . ."
     ;
 }
 
 .dropdown-newgame.show {
     transition: 0.8s ease-in-out;
-    width: 50vw;
-    height: 80vh;
+    width: 90vw;
+    height: 90vh;
     opacity: 1;
 }
 
@@ -82,12 +81,13 @@ body {
     text-align: center;
     color: rgb(99,210,151);
     opacity: 0;
+    font-size: 1.3rem;
 }
 
 .heading-new-game {
     height: 3rem;
     opacity: 0;
-    border-bottom: 1px solid rgb(58, 58, 58);
+    border-bottom: 5px solid rgb(99,210,151);
     grid-area: h;
 }
 
@@ -102,15 +102,12 @@ body {
 }
 
 .select-opponents {
+    height: 100%;
     grid-area: o;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     opacity: 0;
-}
-
-.select-opponents img {
-    height: 10rem;
-    border-radius: 5%;
+    border-bottom: 5px solid rgb(99,210,151);
 }
 
 .opponent:hover {
@@ -119,20 +116,42 @@ body {
 }
 
 .opponent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 25% 10% 25% 20% 20%;
+    grid-template-rows: 15% 70% 15%;
+    grid-template-areas: 
+    "img . h3 h3 h3"
+    "img . txt txt txt"
+    "img . . diff diff"
+    ;
     font-family: 'Squada One', cursive;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    height: 30%;
+    width: 100%;
+}
+
+.opponent img {
+    height: 100%;
+    border-radius: 5%;
+    grid-area: img;
+    padding-right: 0.2rem;
+    padding-left: 0.2rem;
 }
 
 .opponent h3 {
     color: rgb(83, 83, 83);
     font-weight: 300;
+    grid-area: h3;
+    font-size: 1rem;
 }
 
-.opponent p {
-    padding: 1rem 3rem;
-    text-align: center;
+.opponent .info {
+    grid-area: txt;
+}
+
+.difficulty {
+    grid-area: diff;
 }
 
 .hard {
@@ -147,14 +166,19 @@ body {
     color: rgb(55, 199, 67);
 }
 
-.play {
+.play-button {
     grid-area: p;
+}
+
+.play {
     font-family: 'Cute Font', cursive;
-    font-size: 2rem;
-    background-color: black;
-    color: rgb(236, 236, 236);
+    font-size: 2.5rem;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(99,210,151);
     opacity: 0;
     transition: 0.5s;
     height: 3rem;
+    width: 6rem;
+    border: none;
 }
 
