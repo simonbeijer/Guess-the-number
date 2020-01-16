@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css?family=Cute+Font|Squada+One&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: rgb(99,210,151);
+    color: black;
+    height: 100vh;
+    font-family: 'Cute Font', cursive;
+}
+
+.centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.justify-center {
+    display: flex;
+    justify-content: center;
+}
+
+/* NEW GAME BUTTON */
+.new-game {
+    height: 5rem;
+    width: 12rem;
+    background-color: rgb(168, 235, 199);
+    border: 2px solid rgb(92, 92, 92);
+    font-family: 'Cute Font', cursive;
+    border-radius: 10px;
+    color: black;;
+    font-size: 3.5rem;    
+}
+
+.new-game:hover {
+    background-color: rgb(214, 240, 226);
+    cursor: pointer;
+    color: black; 
+}
+
+.new-game:active {
+    height: 4.8rem;
+    width: 11.8rem;
+    outline: none;
+}
+
+.new-game:focus {
+    outline: none;
+}
+
+/* DROPDOWN NEW GAME */
+.dropdown-newgame {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    background-color: rgba(255, 255, 255, 0.699);
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 10% 10% 60% 20%;
+    grid-template-areas: 
+    "h h h h h h h"
+    ". . co co co . ."
+    "o o o o o o o"
+    ". . p p p . ."
+    ;
+}
+
+.dropdown-newgame.show {
+    transition: 0.8s ease-in-out;
+    width: 90vw;
+    height: 90vh;
+    opacity: 1;
+}
+
+.dropdown-newgame h2 {
+    grid-area: co;
+    text-align: center;
+    color: rgb(99,210,151);
+    opacity: 0;
+    font-size: 1.3rem;
+}
+
+.heading-new-game {
+    height: 3rem;
+    opacity: 0;
+    border-bottom: 5px solid rgb(99,210,151);
+    grid-area: h;
+}
+
+.heading-new-game.fadeIn, .select-opponents.fadeIn, .dropdown-newgame h2.fadeIn {
+    transition: 0.5s;
+    opacity: 1;
+}
+
+.heading-new-game h1 {
+    font-size: 3rem;
+    color: rgb(58, 58, 58);
+}
+
+.select-opponents {
+    height: 100%;
+    grid-area: o;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    border-bottom: 5px solid rgb(99,210,151);
+}
+
+.opponent:hover {
+    background-color: rgb(214, 214, 214);
+    cursor: pointer;
+}
+
+.opponent {
+    display: grid;
+    grid-template-columns: 25% 10% 25% 20% 20%;
+    grid-template-rows: 15% 70% 15%;
+    grid-template-areas: 
+    "img . h3 h3 h3"
+    "img . txt txt txt"
+    "img . . diff diff"
+    ;
+    font-family: 'Squada One', cursive;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    height: 30%;
+    width: 100%;
+}
+
+.opponent img {
+    height: 100%;
+    border-radius: 5%;
+    grid-area: img;
+    padding-right: 0.2rem;
+    padding-left: 0.2rem;
+}
+
+.opponent h3 {
+    color: rgb(83, 83, 83);
+    font-weight: 300;
+    grid-area: h3;
+    font-size: 1rem;
+}
+
+.opponent .info {
+    grid-area: txt;
+}
+
+.difficulty {
+    grid-area: diff;
+}
+
+.hard {
+    color: rgb(156, 26, 26);
+}
+
+.medium {
+    color: rgb(255, 136, 0);
+}
+
+.easy {
+    color: rgb(55, 199, 67);
+}
+
+.play-button {
+    grid-area: p;
+}
+
+.play {
+    font-family: 'Cute Font', cursive;
+    font-size: 2.5rem;
+    background-color: rgba(0, 0, 0, 0);
+    color: rgb(99,210,151);
+    opacity: 0;
+    transition: 0.5s;
+    height: 3rem;
+    width: 6rem;
+    border: none;
+}
+
