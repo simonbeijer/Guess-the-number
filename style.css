@@ -23,6 +23,10 @@ body {
     justify-content: center;
 }
 
+header{
+    color: rgb(99,210,151);
+    font-size: 2rem;
+}
 /* NEW GAME BUTTON */
 .new-game {
     height: 5rem;
@@ -64,7 +68,7 @@ body {
     grid-template-areas: 
     "h h h h h h h"
     ". . co co co . ."
-    "o o o o o o o"
+    "o o o . i i i"
     ". . p p p . ."
     ;
 }
@@ -91,7 +95,7 @@ body {
     grid-area: h;
 }
 
-.heading-new-game.fadeIn, .select-opponents.fadeIn, .dropdown-newgame h2.fadeIn {
+.heading-new-game.fadeIn, .select-opponents-ai.fadeIn, .dropdown-newgame h2.fadeIn, .select-opponents-player.fadeIn {
     transition: 0.5s;
     opacity: 1;
 }
@@ -101,13 +105,22 @@ body {
     color: rgb(58, 58, 58);
 }
 
-.select-opponents {
+.select-opponents-ai {
     height: 100%;
     grid-area: o;
     display: flex;
     flex-direction: column;
     opacity: 0;
-    border-bottom: 5px solid rgb(99,210,151);
+    border-right: 5px solid rgb(99,210,151);
+}
+
+.select-opponents-player {
+    height: 100%;
+    grid-area: i;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    border-left: 5px solid rgb(99,210,151);
 }
 
 .opponent:hover {
