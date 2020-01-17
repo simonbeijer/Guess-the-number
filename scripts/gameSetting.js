@@ -1,4 +1,4 @@
-class Gamecontroller {
+class Gamesetting {
 
     newGameDropdown = document.querySelector('.dropdown-newgame');
     newGameHeading = document.querySelector('.heading-new-game');
@@ -13,8 +13,20 @@ class Gamecontroller {
     playBtn = document.querySelector('.play');
     
 
-    openGameSettings(newGameBtn) {
-        newGameBtn.style.display = 'none';
+    openSinglePlayerGameSettings(newGameArea, gameTitle) {
+        newGameArea.style.display = 'none';
+        gameTitle.style.display = 'none';
+        this.newGameDropdown.classList.add('show');
+        setTimeout(() => {
+            this.newGameHeading.classList.add('fadeIn');
+            this.opponents.classList.add('fadeIn');
+            this.selectOpponenth2.classList.add('fadeIn');
+        }, 800)
+    }
+
+    openMultiPlayerGameSettings(newGameArea, gameTitle) {
+        newGameArea.style.display = 'none';
+        gameTitle.style.display = 'none';
         this.newGameDropdown.classList.add('show');
         setTimeout(() => {
             this.newGameHeading.classList.add('fadeIn');
@@ -58,9 +70,6 @@ class Gamecontroller {
                 this.opponent1.classList.add('not-selected1');
                 this.playBtn.style.opacity = '1';
             }
-        })
-      
+        })      
     }
-
-
 }

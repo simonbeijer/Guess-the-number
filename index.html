@@ -7,14 +7,30 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/8bcd668c2a.js" crossorigin="anonymous"></script>
     <script src="scripts/generator.js"></script>
-    <script src="scripts/gamecontroller.js"></script>
+    <script src="scripts/gameSetting.js"></script>
+    <script src="scripts/startScreen.js"></script>
     <script src="scripts/main.js"></script>
     <title>Guess The Number</title>
 </head>
-<body class="centered">
+<body>
 
-    <!-- New game button -->
-    <button class="new-game" type="button">New Game</button>
+    <!-- Game Title -->
+    <div class="game-title">
+        <h1><span>G</span>uess <span>T</span>he <span>N</span>umber</h1>
+        <p>Try to guess the correct number before your opponents...</p>
+    </div>
+
+    <!-- New game buttons -->
+    <div class="new-game-area">
+        <div class="new-game">
+            <button class="singleplayer" type="button">Singleplayer</button>
+            <button class="multiplayer" type="button">Multiplayer</button>
+        </div>
+    
+        <div class="game-info">
+            <p>Hover game mode to reveal more...</p>
+        </div>
+    </div>
 
     <!-- Dropdown menu with game settings -->
     <div class="dropdown-newgame">
@@ -25,17 +41,15 @@
         <h2>Choose opponent...</h2>
 
         <div class="select-opponents centered">
-            <div class="opponent1 opponent not-selected1">
-                <img src="img/op1.png" alt="">
-                <h3>Knowitall</h3>
-                <p class="info">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <p class="difficulty"><span class="hard">Hard</span> <i class="fas fa-circle"></i> <i class="fas fa-circle"></i> <i class="fas fa-circle"></i></p>
+            <div class="playername">
+                <i class="fas fa-user-ninja fa-7x"></i>
+                <input type="text" placeholder="Enter name">
             </div>
             <div class="opponent2 opponent not-selected2">
                 <img src="img/op2.png" alt="">
                 <h3>Xibit</h3>
                 <p class="info">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p class="info">
-                <p class="difficulty"><span class="medium">Medium</span> <i class="fas fa-circle"></i> <i class="fas fa-circle"></i></p class="difficulty">
+                    <p class="difficulty"><span class="hard">Hard</span> <i class="fas fa-circle"></i> <i class="fas fa-circle"></i> <i class="fas fa-circle"></i></p>
             </div>
             <div class="opponent3 opponent not-selected3">
                 <img src="img/op3.png" alt="">
