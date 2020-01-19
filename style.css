@@ -154,8 +154,12 @@ body {
 }
 
 .opponent:hover {
-    background-color: rgb(214, 214, 214);
+    background-color: rgb(157, 197, 174);
     cursor: pointer;
+}
+
+.selected {
+    background-color: rgb(157, 197, 174);
 }
 
 .playername {
