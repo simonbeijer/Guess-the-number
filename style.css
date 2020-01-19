@@ -103,9 +103,10 @@ body {
     border-radius: 5px;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: 10% 10% 60% 20%;
+    grid-template-rows: 10% 20% 5% 45% 20%;
     grid-template-areas: 
     "h h h h h h h"
+    ". . . pn . . ."
     ". . co co co . ."
     "o o o o o o o"
     ". . p p p . ."
@@ -124,7 +125,7 @@ body {
     text-align: center;
     color: rgb(99,210,151);
     opacity: 0;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
 
 .heading-new-game {
@@ -165,7 +166,9 @@ body {
 .playername {
     display: flex;
     justify-content: space-between;
-    width: 350px;
+    height: 130px;
+    width: 400px;
+    grid-area: pn;
 }
 
 .playername input {
@@ -188,8 +191,8 @@ body {
     font-family: 'Squada One', cursive;
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
-    height: 30%;
-    width: 350px;
+    height: 130px;
+    width: 400px;
 }
 
 .opponent img {

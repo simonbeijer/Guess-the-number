@@ -1,6 +1,7 @@
 class Gamesetting {
 
     newGameDropdown = document.querySelector('.dropdown-newgame');
+    newGameScreen = document.querySelector('.gamescreen');
     newGameHeading = document.querySelector('.heading-new-game');
     opponents = document.querySelector('.select-opponents');
     selectOpponenth2 = document.querySelector('.dropdown-newgame h2')
@@ -8,17 +9,20 @@ class Gamesetting {
     opponent2Img = document.querySelector('.opponent2 img');
     opponent3 = document.querySelector('.opponent3');
     opponent3Img = document.querySelector('.opponent3 img');
-    playBtn = document.querySelector('.play');
+    playBtn = document.querySelector('.play');    
     xibitSelected = false;
     haroldSelected = false;
     gamemode;
     
 
     openSinglePlayerGameSettings(newGameArea, gameTitle) {
-        this.playBtn.addEventListener('click', () => {
-            let playerName = document.querySelector('.playername input').value;
+        this.playBtn.addEventListener('click', () => { 
+            this.gamemode = 'singleplayer'; 
+            let playerName = document.querySelector('.playername input').value;         
             let gamescreen = new Gamescreen(this.gamemode, this.xibitSelected, this.haroldSelected, playerName);
             gamescreen.newGame();
+            this.newGameDropdown.style.display = 'none';
+            this.newGameScreen.classList.add('show');
         })
         this.gamemode = 'singleplayer';
         newGameArea.style.display = 'none';
@@ -31,24 +35,24 @@ class Gamesetting {
         }, 800)
     }
 
-    openMultiPlayerGameSettings(newGameArea, gameTitle) {
-        this.gamemode = 'multiplayer';
-        newGameArea.style.display = 'none';
-        gameTitle.style.display = 'none';
-        this.newGameDropdown.classList.add('show');
-        setTimeout(() => {
-            this.newGameHeading.classList.add('fadeIn');
-            this.opponents.classList.add('fadeIn');
-            this.selectOpponenth2.classList.add('fadeIn');
-        }, 800)
-    }
+    // openMultiPlayerGameSettings(newGameArea, gameTitle) {
+    //     this.gamemode = 'multiplayer';
+    //     newGameArea.style.display = 'none';
+    //     gameTitle.style.display = 'none';
+    //     this.newGameDropdown.classList.add('show');
+    //     setTimeout(() => {
+    //         this.newGameHeading.classList.add('fadeIn');
+    //         this.opponents.classList.add('fadeIn');
+    //         this.selectOpponenth2.classList.add('fadeIn');
+    //     }, 800)
+    // }
 
-    showPlayBtn() {
+    showPlayBtn() {    
         if (this.xibitSelected == true || this.haroldSelected == true) {
             this.playBtn.style.opacity = '1';
         } else {
             this.playBtn.style.opacity = '0';
-        }        
+        }                        
     }
 
     selectOpponent(){
