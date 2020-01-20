@@ -8,6 +8,9 @@
 // let answer = this.generator.getAnswer(8, 23);
 
 class Gamemanager {
+
+
+
     constructor() {
 
     }
@@ -30,6 +33,23 @@ class Gamemanager {
             result = 0;
         }
         return result;
+    }
+
+
+
+
+
+    checkAnswer(result, answer) {
+        let string;
+        if(answer == result) {
+            string = "Correct U bitch!";
+            // gameOver = true;
+        } else if (answer > result) {
+            string = "Too High!";
+        }  else if (answer < result) {
+            string = "Too Low!";
+        }
+        return string;
     }
 }
 
