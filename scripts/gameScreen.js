@@ -3,6 +3,8 @@ class Gamescreen {
     gameMode;
     xibitSelected;
     haroldSelected;
+    infoScreen = document.querySelector('.infoScreen p');
+    guessBtn = document.querySelector('.player1 button');
     player1input = document.getElementById('player1input');
     player1Name = document.querySelector('.player1 p');
     player2Name = document.querySelector('.player2 p');
@@ -47,5 +49,13 @@ class Gamescreen {
         let gameManager = new Gamemanager();
         let answer = gameManager.getAnswer(1, 100);
         console.log(answer);
+
+        this.guessBtn.addEventListener('click', () => {
+            let infoText = gameManager.checkAnswer(answer,this.player1input.value);
+            this.infoScreen.innerText = infoText;
+            this.player1input.value = '';
+
+        })
     }
+
 }
