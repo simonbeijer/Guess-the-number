@@ -1,4 +1,4 @@
-body {
+.gamescreen {
     background-color: rgb(99,210,151);
     box-sizing: border-box;
     padding: 0.2rem;
@@ -6,6 +6,10 @@ body {
     color: black;
     height: 100vh;
     font-family: 'Cute Font', cursive;
+    display: none;   
+}
+
+.gamescreen.show {
     display: grid;
     grid-gap: 1rem;
     grid-template-rows: repeat(5, 1fr);
@@ -14,7 +18,7 @@ body {
     "infoScreen"
     "player1"
     "player2"
-    "player3";
+    "player3"; 
 }
 
 .gameLeader{
@@ -38,7 +42,7 @@ body {
 .infoScreen div{
     background: rgba(255, 255, 255, 0.89);
     padding:1rem;
-    width: 40%;
+    width: 80%;
     height: 40%;
     border-radius: 5px;
     box-shadow: 2px 2px 4px rgb(130, 189, 158);

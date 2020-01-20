@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link href="gameScreen.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8bcd668c2a.js" crossorigin="anonymous"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/gameSetting.js"></script>
+    <script src="scripts/gameScreen.js"></script>
+    <script src="scripts/startScreen.js"></script>
+    <script src="scripts/gameManager.js"></script>
+    <title>Guess The Number</title>
+</head>
+<body>
+
+    <!-- Game Title -->
+    <div class="game-title">
+        <h1><span>G</span>uess <span>T</span>he <span>N</span>umber</h1>
+        <p>Try to guess the correct number before your opponents...</p>
+    </div>
+
+    <!-- New game buttons -->
+    <div class="new-game-area">
+        <div class="new-game">
+            <button class="singleplayer" type="button">Singleplayer</button>
+            <button class="multiplayer" type="button">Multiplayer</button>
+        </div>
+    
+        <div class="game-info">
+            <p>Hover game mode to reveal more...</p>
+        </div>
+    </div>
+
+    <!-- Dropdown menu with game settings -->
+    <div class="dropdown-newgame">
+        <div class="heading-new-game centered">
+            <h1>Start new game</h1>
+        </div>
+
+        <div class="playername">
+            <i class="fas fa-user-ninja fa-7x"></i>
+            <input type="text" placeholder="Enter name..">
+        </div>
+
+        <h2>Choose 1 or more opponents...</h2>
+
+        <div class="select-opponents centered">            
+            <div class="opponent2 opponent">
+                <img src="img/op2.png" alt="">
+                <h3>Xibit</h3>
+                <p class="info">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p class="info">
+                    <p class="difficulty"><span class="hard">Hard</span> <i class="fas fa-circle"></i> <i class="fas fa-circle"></i> <i class="fas fa-circle"></i></p>
+            </div>
+            <div class="opponent3 opponent">
+                <img src="img/op3.png" alt="">
+                <h3>Harold</h3>
+                <p class="info">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p class="info">
+                <p class="difficulty"><span class="easy">Easy</span> <i class="fas fa-circle"></i></p class="difficulty">
+            </div>            
+        </div>
+        
+        <div class="play-button centered">            
+            <button class="play">Play</button>           
+        </div>
+    </div>
+
+    <!-- Gamescreen -->
+    <div class="gamescreen">
+        <div class="gameLeader centered">
+            <div>
+                <p>Game leader</p>
+            </div>
+        </div>
+    
+        <div class="infoScreen centered" >
+            <div>
+                <p>Welcome! Try to guess a number from 1 to 100. The game will begin with your first guess.. Good luck!</p>
+            </div>
+        </div>
+
+        <div class="player1 player">
+            <div>
+                <img src="img/player.png">
+                <p>Player1</p>
+            </div>
+                <form> 
+                    <input id="player1input" type="number" placeholder="0" maxlength="3">
+                    <button type="submit">Guess</button>
+                </form>
+        </div>
+    
+        <div class="player2 player">
+            <div>
+                <img src="img/op3selected.png">
+                <p>Player2</p>
+            </div>
+            <form> 
+                <input type="number" placeholder="0" maxlength="3">
+                <button type="submit">Guess</button>
+            </form>
+        </div>
+    
+        <div class="player3 player">
+            <div>
+                <img src="img/op3selected.png">
+                <p>Player3</p>
+            </div>
+            <form> 
+                <input type="number" placeholder="0" maxlength="3">
+                <button type="submit">Guess</button>
+            </form>
+         
+        </div>
+    </div>
+    
+</body>
+</html>

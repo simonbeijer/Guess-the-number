@@ -7,7 +7,7 @@
 // this.generator = new Generator();
 // let answer = this.generator.getAnswer(8, 23);
 
-class Generator {
+class Gamemanager {
     constructor() {
 
     }
@@ -34,21 +34,21 @@ class Generator {
 }
 
 // test
-const generator = new Generator();
-let answer = generator.getAnswer();
-console.log(answer);
+// const generator = new Generator();
+// let answer = generator.getAnswer();
+// console.log(answer);
 
-answer = generator.getAnswer(55, null);
-console.log(answer);
+// answer = generator.getAnswer(55, null);
+// console.log(answer);
 
-answer = generator.getAnswer(null, 90);
-console.log(answer);
+// answer = generator.getAnswer(null, 90);
+// console.log(answer);
 
-answer = generator.getAnswer(55, 2000);
-console.log(answer);
+// answer = generator.getAnswer(55, 2000);
+// console.log(answer);
 
-answer = generator.getAnswer(1973, 1977);
-console.log(answer);
+// answer = generator.getAnswer(1973, 1977);
+// console.log(answer);
 
-answer = generator.getAnswer(7, 13);
-console.log(answer);
+// answer = generator.getAnswer(7, 13);
+// console.log(answer);

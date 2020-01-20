@@ -10,6 +10,10 @@ body {
     color: black;
     height: 100vh;
     font-family: 'Cute Font', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .centered {
@@ -23,8 +27,47 @@ body {
     justify-content: center;
 }
 
-/* NEW GAME BUTTON */
+.new-game-area {
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .new-game {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.game-info {
+    margin-top: 1rem;
+    width: 20rem;
+    color: rgb(33, 75, 52);
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.game-title {
+    text-align: center;
+}
+
+.game-title h1 {
+    font-size: 5rem;
+}
+
+.game-title span {
+    font-size: 7rem;
+    color: rgb(39, 87, 63);
+}
+
+.game-title p {
+    font-size: 1.5rem;
+}
+
+/* NEW GAME BUTTON */
+.singleplayer, .multiplayer {
     height: 5rem;
     width: 12rem;
     background-color: rgb(168, 235, 199);
@@ -32,22 +75,22 @@ body {
     font-family: 'Cute Font', cursive;
     border-radius: 10px;
     color: black;;
-    font-size: 3.5rem;    
+    font-size: 2.5rem;    
 }
 
-.new-game:hover {
+.singleplayer:hover, .multiplayer:hover {
     background-color: rgb(214, 240, 226);
     cursor: pointer;
     color: black; 
 }
 
-.new-game:active {
-    height: 4.8rem;
-    width: 11.8rem;
+.singleplayer:active, .multiplayer:active {
+    height: calc(height - 0.2rem);
+    width: calc(width - 0.2rem);
     outline: none;
 }
 
-.new-game:focus {
+.singleplayer:focus, .multiplayer:focus {
     outline: none;
 }
 
@@ -60,9 +103,10 @@ body {
     border-radius: 5px;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: 10% 10% 60% 20%;
+    grid-template-rows: 10% 20% 5% 45% 20%;
     grid-template-areas: 
     "h h h h h h h"
+    ". . . pn . . ."
     ". . co co co . ."
     "o o o o o o o"
     ". . p p p . ."
@@ -81,7 +125,7 @@ body {
     text-align: center;
     color: rgb(99,210,151);
     opacity: 0;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
 
 .heading-new-game {
@@ -111,8 +155,28 @@ body {
 }
 
 .opponent:hover {
-    background-color: rgb(214, 214, 214);
+    background-color: rgb(157, 197, 174);
     cursor: pointer;
+}
+
+.selected {
+    background-color: rgb(157, 197, 174);
+}
+
+.playername {
+    display: flex;
+    justify-content: space-between;
+    height: 130px;
+    width: 400px;
+    grid-area: pn;
+}
+
+.playername input {
+    width: 14rem;
+    height: 3rem;
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Cute Font', cursive;
 }
 
 .opponent {
@@ -127,8 +191,8 @@ body {
     font-family: 'Squada One', cursive;
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
-    height: 30%;
-    width: 100%;
+    height: 130px;
+    width: 400px;
 }
 
 .opponent img {
@@ -181,4 +245,43 @@ body {
     width: 6rem;
     border: none;
 }
+
+@media screen and (max-width: 768px) {
+
+    .opponent {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 510px) {
+
+
+    .new-game-area {
+        width: 15rem;
+    }
+
+    .singleplayer, .multiplayer {
+        height: 3rem;
+        width: 7rem;
+        font-size: 1.5rem;    
+    }
+
+    .game-title h1 {
+        font-size: 2rem;
+    }
+    
+    .game-title span {
+        font-size: 4rem;
+        color: rgb(39, 87, 63);
+    }
+    
+    .game-title p {
+        font-size: 1rem;
+    }
+
+    .opponent {
+        width: 100%;
+    }
+}
+
 
