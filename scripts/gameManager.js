@@ -8,11 +8,9 @@
 // let answer = this.generator.getAnswer(8, 23);
 
 class Gamemanager {
-
-
-
+    counter;
     constructor() {
-
+        this.counter = 0;
     }
 
     getAnswer(min, max) {
@@ -51,6 +49,7 @@ class Gamemanager {
         }
         return string;
     }
+
 }
 
 // test
