@@ -82,8 +82,9 @@ class Gamescreen {
     
     
     
-    newGame() {        
-        
+    newGame() {
+
+        document.getElementById('player1input').focus();
         this.guessBtn2.style.visibility = 'hidden';
         this.guessBtn3.style.visibility = 'hidden';
         
@@ -110,14 +111,34 @@ class Gamescreen {
             this.player3Image.setAttribute('src', '/img/op3selected.png');            
         }
 
-        this.player1input.focus();
+        //this.player1input.focus(); 
         
         console.log(this.answer);
         console.log(this.counter1, this.counter2, this.counter3);
 
-        this.guessBtn1.addEventListener('click', () => {
+
+        this.guessBtn1.addEventListener('click', e => {
+            e.preventDefault();
             this.changeTurn();
         }) 
+
+        this.player1input.addEventListener('keyup', e => {
+            if (e.keyCode === 13) {
+                e.preventDefault();
+                this.guessBtn1.click();                
+            }
+        })
+
+        // Fixa detta Fredrik !!!!!! Oj vad utropstecken =)
+
+        // this.guessBtn1.addEventListener('keyup', function (event) {
+        //     if (event.keyCode == 13) {
+        //         event.preventDefault();
+        //         this.changeTurn();
+        //         console.log("FAN!");
+                
+        //     }
+        // })
 
         
         // else if (this.counter1 == this.counter2 && this.counter1 == this.counter3) {
