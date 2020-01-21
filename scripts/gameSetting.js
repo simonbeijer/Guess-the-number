@@ -13,7 +13,29 @@ class Gamesetting {
     xibitSelected = false;
     haroldSelected = false;
     gamemode;
-    
+
+    openMultiplayerGameSettings(newGameArea, gameTitle) {
+        this.playBtn.addEventListener('click', () => {
+            this.gamemode = 'multiplayer';
+            // let playerName = document.querySelector('.playername input').value;
+            // let gamescreen = new Gamescreen(this.gamemode, this.xibitSelected, this.haroldSelected, playerName);
+            // gamescreen.newGame();
+            this.newGameDropdown.style.display = 'none';
+            this.newGameScreen.classList.add('show');
+        });
+
+        this.gamemode = 'multiplayer';
+        newGameArea.style.display = 'none';
+        gameTitle.style.display = 'none';
+        this.newGameDropdown.classList.add('show');
+
+        const selectOpponents = document.getElementById('select-opponents');
+        selectOpponents.remove();
+
+        setTimeout(() => {
+            this.newGameHeading.classList.add('fadeIn');
+        }, 800)
+    }
 
     openSinglePlayerGameSettings(newGameArea, gameTitle) {
         this.playBtn.addEventListener('click', () => { 
@@ -59,11 +81,11 @@ class Gamesetting {
 
         this.opponent2.addEventListener('click', () => {
             if (this.opponent2.classList.contains('selected')) {
-                this.opponent2Img.setAttribute('src', '/img/op2.png');
+                this.opponent2Img.setAttribute('src', 'img/op2.png');
                 this.opponent2.classList.remove('selected');
                 this.xibitSelected = false;                
             } else {
-                this.opponent2Img.setAttribute('src', '/img/op2selected.png');
+                this.opponent2Img.setAttribute('src', 'img/op2selected.png');
                 this.opponent2.classList.add('selected');                
                 this.xibitSelected = true;
             }
@@ -72,11 +94,11 @@ class Gamesetting {
 
         this.opponent3.addEventListener('click', () => {
             if (this.opponent3.classList.contains('selected')) {
-                this.opponent3Img.setAttribute('src', '/img/op3.png');
+                this.opponent3Img.setAttribute('src', 'img/op3.png');
                 this.opponent3.classList.remove('selected');
                 this.haroldSelected = false;                
             } else {
-                this.opponent3Img.setAttribute('src', '/img/op3selected.png');
+                this.opponent3Img.setAttribute('src', 'img/op3selected.png');
                 this.opponent3.classList.add('selected');              
                 this.haroldSelected = true;
             }

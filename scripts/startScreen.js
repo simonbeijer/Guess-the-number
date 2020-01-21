@@ -30,6 +30,10 @@ class Startscreen {
         this.singlePlayerBtn.addEventListener('mouseout', () => {
             this.gameInfo.innerText = 'Hover game mode to reveal more...';
         })
+
+        this.multiPlayerBtn.addEventListener('click', () => {
+            this.gameSetting.openMultiplayerGameSettings(this.newGameArea, this.gameTitle);
+        })
     }
     
 }
