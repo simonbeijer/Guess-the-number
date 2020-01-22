@@ -18,9 +18,13 @@ class Gamesetting {
     openMultiplayerGameSettings(newGameArea, gameTitle) {
         this.playBtn.addEventListener('click', () => {
             this.gamemode = 'multiplayer';
-            // let playerName = document.querySelector('.playername input').value;
-            // let gamescreen = new Gamescreen(this.gamemode, this.xibitSelected, this.haroldSelected, playerName);
-            // gamescreen.newGame();
+            let playerInputs = document.querySelectorAll('.playername input');
+            let playerNames = [];
+            for (let name of playerInputs) {
+                playerNames.push(name.value);
+            }
+            let multiplayergame = new Multiplayergame(playerNames);
+            multiplayergame.newGame();
             this.newGameDropdown.style.display = 'none';
             this.newGameScreen.classList.add('show');
         });

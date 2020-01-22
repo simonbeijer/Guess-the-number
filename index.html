@@ -11,6 +11,7 @@
     <script src="scripts/main.js"></script>
     <script src="scripts/gameSetting.js"></script>
     <script src="scripts/gameScreen.js"></script>
+    <script src="scripts/multiplayergame.js"></script>
     <script src="scripts/startScreen.js"></script>
     <script src="scripts/gameManager.js"></script>
     <title>Guess The Number</title>
@@ -74,13 +75,13 @@
     <div class="gamescreen">
         <div class="gameLeader centered">
             <div>
-                <p>Game leader</p>
+                <p>Start Game</p>
             </div>
         </div>
 
         <div class="infoScreen centered">
             <div>
-                <p>Welcome! Guess a number from 1 to 100. The game will begin with your first guess.. Good luck!</p>
+                <p>Welcome! Guess a number from 1 to 100. Click "Start game" to begin. Good luck!</p>
             </div>
         </div>
 
@@ -91,29 +92,29 @@
             </div>
                 <form> 
                     <input id="player1input" class="player1input" type="number" placeholder="0" maxlength="3">
-                    <button type="button">Guess</button>
+                    <button type="button" disabled>Guess</button>
                 </form>
         </div>
 
         <div class="player2 player">
             <div>
-                <img src="img/op3selected.png">
+                <img src="img/player.png">
                 <p>Player2</p>
             </div>
             <form>
                 <input id="player2input" type="number" placeholder="0" maxlength="3">
-                <button type="submit">Guess</button>
+                <button type="button" disabled>Guess</button>
             </form>
         </div>
 
         <div class="player3 player">
             <div>
-                <img src="img/op3selected.png">
+                <img src="img/player.png">
                 <p>Player3</p>
             </div>
             <form>
                 <input id="player3input" type="number" placeholder="0" maxlength="3">
-                <button type="submit">Guess</button>
+                <button type="button" disabled>Guess</button>
             </form>
 
         </div>
