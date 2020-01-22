@@ -96,19 +96,19 @@ class Gamescreen {
 
         if (this.xibitSelected === true && this.haroldSelected === false) {
             this.player2Name.innerText = 'Xibit';
-            this.player2Image.setAttribute('src', '/img/op2selected.png');
+            this.player2Image.setAttribute('src', 'img/op2selected.png');
             this.player3.style.visibility = 'hidden';
         }
         if (this.xibitSelected === false && this.haroldSelected === true) {
             this.player2Name.innerText = 'Harold';
-            this.player2Image.setAttribute('src', '/img/op3selected.png');
+            this.player2Image.setAttribute('src', 'img/op3selected.png');
             this.player3.style.visibility = 'hidden';
         }
         if (this.xibitSelected === true && this.haroldSelected === true) {
             this.player2Name.innerText = 'Xibit';
-            this.player2Image.setAttribute('src', '/img/op2selected.png');
+            this.player2Image.setAttribute('src', 'img/op2selected.png');
             this.player3Name.innerText = 'Harold';
-            this.player3Image.setAttribute('src', '/img/op3selected.png');            
+            this.player3Image.setAttribute('src', 'img/op3selected.png');
         }
 
         //this.player1input.focus(); 
