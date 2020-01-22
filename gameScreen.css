@@ -12,9 +12,10 @@
 .gamescreen.show {
     display: grid;
     grid-gap: 1rem;
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: 10% 2% 20% 20% 20% 20%;
     grid-template-areas: 
     "gameLeader"
+    "latest"
     "infoScreen"
     "player1"
     "player2"
@@ -34,18 +35,39 @@
     box-shadow: 2px 2px 4px rgb(130, 189, 158);
 }
 
-.infoScreen{
+.gameLeader div:hover {
+    cursor: pointer;
+}
+
+.latest {
+    grid-area: latest;
+    text-align: center;
+}
+
+.infoScreen{    
     grid-area: infoScreen;
-    font-size: 1.5rem;
+    font-size: 1.5rem;    
 }
 
 .infoScreen div{
     background: rgba(255, 255, 255, 0.89);
     padding:1rem;
-    width: 80%;
-    height: 40%;
+    width: 32rem;
     border-radius: 5px;
     box-shadow: 2px 2px 4px rgb(130, 189, 158);
+    display: flex;
+    justify-content: space-between;
+}
+
+.infoScreen p {
+    width: 80%;
+}
+
+.infoScreen ul {
+    width: 10%;
+    font-size: 1rem;
+    list-style-type: none;
+    opacity: 1;
 }
 
 .player1{
@@ -57,19 +79,19 @@
 }
 
 .player1 div:first-child {
-    background: #DB504A;
+    background-color: #DB504A;
     display: flex;
     border-radius: 5px;
     margin-right: 0.2rem;
 }
 .player2 div:first-child {
-    background: #E3B505;
+    background-color: #E3B505;
     display: flex;
     border-radius: 5px;
     margin-right: 0.2rem;
 }
 .player3 div:first-child {
-    background: #4F6D7A;
+    background-color: #4F6D7A;
     display: flex;
     border-radius: 5px;
     margin-right: 0.2rem;
@@ -123,7 +145,8 @@ form button {
     font-family: 'Cute Font', cursive;
     border-radius: 10px;
     color: black;
-    font-size: 1.6rem;    
+    font-size: 1.6rem; 
+    opacity: 0.3;   
 }
 
 form button:hover {
