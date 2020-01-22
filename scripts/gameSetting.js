@@ -29,6 +29,7 @@ class Gamesetting {
         newGameArea.style.display = 'none';
         gameTitle.style.display = 'none';
         this.newGameDropdown.classList.add('show');
+        this.showPlayBtn(); 
 
         const selectOpponents = document.getElementById('select-opponents');
         selectOpponents.remove();
@@ -49,10 +50,12 @@ class Gamesetting {
         const button = document.createElement('button');
         button.className = 'btn-add-player';
         button.innerText = 'Add player';
-        button.addEventListener('click', () => {
-            const player = this.createNewPlayer('player' + (this.playersAmount + 1));
-            button.parentNode.insertBefore(player, button);
-            this.playersAmount += 1;
+        button.addEventListener('click', () => { 
+            if (this.playersAmount < 3) {
+                const player = this.createNewPlayer('player' + (this.playersAmount + 1));
+                button.parentNode.insertBefore(player, button);
+                this.playersAmount += 1; 
+            }           
         });
         elementBefore.parentNode.insertBefore(button, elementBefore.nextSibling);
     }
@@ -113,7 +116,9 @@ class Gamesetting {
     showPlayBtn() {    
         if (this.xibitSelected == true || this.haroldSelected == true) {
             this.playBtn.style.opacity = '1';
-        } else {
+        } else if (this.gamemode == 'multiplayer') {
+            this.playBtn.style.opacity = '1';
+        }else {
             this.playBtn.style.opacity = '0';
         }                        
     }
