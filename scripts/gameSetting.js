@@ -13,6 +13,7 @@ class Gamesetting {
     xibitSelected = false;
     haroldSelected = false;
     gamemode;
+    playersAmount = 1;
 
     openMultiplayerGameSettings(newGameArea, gameTitle) {
         this.playBtn.addEventListener('click', () => {
@@ -32,9 +33,48 @@ class Gamesetting {
         const selectOpponents = document.getElementById('select-opponents');
         selectOpponents.remove();
 
+       const player1 = document.getElementById('player1');
+       const player2 = this.createNewPlayer('player2');
+       player1.parentNode.insertBefore(player2, player1.nextSibling);
+       this.playersAmount += 1;
+
+       this.createAddButton(player2);
+
         setTimeout(() => {
             this.newGameHeading.classList.add('fadeIn');
         }, 800)
+    }
+
+    createAddButton(elementBefore) {
+        const button = document.createElement('button');
+        button.className = 'btn-add-player';
+        button.innerText = 'Add player';
+        button.addEventListener('click', () => {
+            const player = this.createNewPlayer('player' + (this.playersAmount + 1));
+            button.parentNode.insertBefore(player, button);
+            this.playersAmount += 1;
+        });
+        elementBefore.parentNode.insertBefore(button, elementBefore.nextSibling);
+    }
+
+    createNewPlayer(id) {
+        const colors = ['blue', 'green', 'red', 'yellow', 'pink', 'orange', 'purple'];
+        const result = document.createElement('div');
+        result.id = id;
+        result.className = 'playername';
+
+        const avatar = document.createElement('i');
+        avatar.className = 'fas fa-user-ninja fa-7x';
+        avatar.setAttribute('aria-hidden', 'true');
+        avatar.style.color = colors[this.playersAmount - 1];
+        result.append(avatar);
+
+        const name = document.createElement('input');
+        name.type = 'text';
+        name.placeholder = 'Enter name..';
+        result.append(name);
+
+        return result;
     }
 
     openSinglePlayerGameSettings(newGameArea, gameTitle) {
@@ -104,5 +144,5 @@ class Gamesetting {
             }
             this.showPlayBtn();
         })        
-    }    
+    }
 }

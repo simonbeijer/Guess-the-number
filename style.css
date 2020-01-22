@@ -168,7 +168,7 @@ body {
     justify-content: space-between;
     height: 130px;
     width: 400px;
-    grid-area: pn;
+    /*grid-area: pn;*/
 }
 
 .playername input {
@@ -244,6 +244,20 @@ body {
     height: 3rem;
     width: 6rem;
     border: none;
+}
+
+.btn-add-player {
+    padding: 0.5rem 1rem;
+    background-color: rgb(168, 235, 199);
+    border: 2px solid rgb(92, 92, 92);
+    font-family: 'Cute Font', cursive;
+    border-radius: 10px;
+    color: black;;
+    font-size: 2rem;
+}
+
+.btn-add-player:focus {
+    outline: none;
 }
 
 @media screen and (max-width: 768px) {

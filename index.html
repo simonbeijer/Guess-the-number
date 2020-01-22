@@ -28,7 +28,7 @@
             <button class="singleplayer" type="button">Singleplayer</button>
             <button class="multiplayer" type="button">Multiplayer</button>
         </div>
-    
+
         <div class="game-info">
             <p>Hover game mode to reveal more...</p>
         </div>
@@ -40,9 +40,11 @@
             <h1>Start new game</h1>
         </div>
 
-        <div class="playername">
-            <i class="fas fa-user-ninja fa-7x"></i>
-            <input type="text" placeholder="Enter name..">
+        <div>
+            <div id="player1" class="playername">
+                <i class="fas fa-user-ninja fa-7x"></i>
+                <input type="text" placeholder="Enter name..">
+            </div>
         </div>
 
         <h2>Choose 1 or more opponents...</h2>
@@ -59,11 +61,11 @@
                 <h3>Harold</h3>
                 <p class="info">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p class="info">
                 <p class="difficulty"><span class="easy">Easy</span> <i class="fas fa-circle"></i></p class="difficulty">
-            </div>            
+            </div>
         </div>
-        
-        <div class="play-button centered">            
-            <button class="play">Play</button>           
+
+        <div class="play-button centered">
+            <button class="play">Play</button>
         </div>
     </div>
 
@@ -74,7 +76,7 @@
                 <p>Game leader</p>
             </div>
         </div>
-    
+
         <div class="infoScreen centered">
             <div>
                 <p>Welcome! Try to guess a number from 1 to 100. The game will begin with your first guess.. Good luck!</p>
@@ -86,35 +88,35 @@
                 <img src="img/player.png">
                 <p>Player1</p>
             </div>
-                <form> 
+                <form>
                     <input id="player1input" type="number" placeholder="0" maxlength="3">
                     <button type="button">Guess</button>
                 </form>
         </div>
-    
+
         <div class="player2 player">
             <div>
                 <img src="img/op3selected.png">
                 <p>Player2</p>
             </div>
-            <form> 
+            <form>
                 <input id="player2input" type="number" placeholder="0" maxlength="3">
                 <button type="submit">Guess</button>
             </form>
         </div>
-    
+
         <div class="player3 player">
             <div>
                 <img src="img/op3selected.png">
                 <p>Player3</p>
             </div>
-            <form> 
+            <form>
                 <input id="player3input" type="number" placeholder="0" maxlength="3">
                 <button type="submit">Guess</button>
             </form>
-         
+
         </div>
     </div>
-    
+
 </body>
 </html>
