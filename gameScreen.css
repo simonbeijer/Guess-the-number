@@ -12,9 +12,10 @@
 .gamescreen.show {
     display: grid;
     grid-gap: 1rem;
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: 10% 2% 20% 20% 20% 20%;
     grid-template-areas: 
     "gameLeader"
+    "latest"
     "infoScreen"
     "player1"
     "player2"
@@ -38,18 +39,35 @@
     cursor: pointer;
 }
 
+.latest {
+    grid-area: latest;
+    text-align: center;
+}
+
 .infoScreen{    
     grid-area: infoScreen;
-    font-size: 1.5rem;
+    font-size: 1.5rem;    
 }
 
 .infoScreen div{
     background: rgba(255, 255, 255, 0.89);
     padding:1rem;
     width: 32rem;
-    height: 40%;
     border-radius: 5px;
     box-shadow: 2px 2px 4px rgb(130, 189, 158);
+    display: flex;
+    justify-content: space-between;
+}
+
+.infoScreen p {
+    width: 80%;
+}
+
+.infoScreen ul {
+    width: 10%;
+    font-size: 1rem;
+    list-style-type: none;
+    opacity: 1;
 }
 
 .player1{

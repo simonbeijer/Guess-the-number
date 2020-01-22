@@ -4,6 +4,9 @@ class Multiplayergame {
     infoScreen = document.querySelector('.infoScreen p');
     playerDone = false;
     playerWon = false;
+    latestGuesses = [0, 0, 0, 0, 0];
+    latestUl = document.querySelectorAll('.infoScreen ul li');
+    latest = document.querySelector('.infoScreen ul');
 
     // Player1
     guessBtn1 = document.querySelector('.player1 button');
@@ -38,7 +41,7 @@ class Multiplayergame {
     }    
 
     newGame() {
-        
+        this.latest.style.opacity = 1;
         this.player1Name.innerText = this.playerNames[0];
         this.player2Name.innerText = this.playerNames[1];        
 
@@ -53,9 +56,12 @@ class Multiplayergame {
             this.player1turn();
         })
 
-        this.guessBtn1.addEventListener('click', () => {            
+        this.guessBtn1.addEventListener('click', () => {
+            this.latestGuesses.pop();
+            this.latestGuesses.unshift(this.player1input.value);
+            this.showLatestGuesses();            
             if (this.player1input.value == this.answer) {
-                this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[0]}`;
+                this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[0]}. The correct number was ${this.answer}.`;
                 this.playerWon = true;
                 this.playerDone = true;
             } else if (this.player1input.value < this.answer) {
@@ -67,9 +73,12 @@ class Multiplayergame {
             }
             this.player1input.value = '';
         })
-        this.guessBtn2.addEventListener('click', () => {            
+        this.guessBtn2.addEventListener('click', () => {
+            this.latestGuesses.pop();
+            this.latestGuesses.unshift(this.player2input.value);
+            this.showLatestGuesses();              
             if (this.player2input.value == this.answer) {
-                this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[1]}`;
+                this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[1]}. The correct number was ${this.answer}.`;
                 this.playerWon = true;
                 this.playerDone = true;
             } else if (this.player2input.value < this.answer) {
@@ -81,9 +90,12 @@ class Multiplayergame {
             }
             this.player2input.value = '';
         })
-        this.guessBtn3.addEventListener('click', () => {            
+        this.guessBtn3.addEventListener('click', () => {
+            this.latestGuesses.pop();
+            this.latestGuesses.unshift(this.player3input.value);
+            this.showLatestGuesses();              
             if (this.player3input.value == this.answer) {
-                this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[2]}`;
+                this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[2]}. The correct number was ${this.answer}.`;
                 this.playerWon = true;
                 this.playerDone = true;
             } else if (this.player3input.value < this.answer) {
@@ -94,6 +106,16 @@ class Multiplayergame {
                 this.playerDone = true;
             }
             this.player3input.value = '';
+        })
+
+        window.addEventListener('keyup', e => {
+            if (e.keyCode === 76) {
+                if (this.latest.style.opacity == 1) {
+                    this.latest.style.opacity = 0;
+                } else {
+                    this.latest.style.opacity = 1;
+                }
+            }
         })
     }    
 
@@ -185,6 +207,20 @@ class Multiplayergame {
             if (this.playerWon === false) {
                 this.player1turn();
             }
+    }
+
+    showLatestGuesses() {
+        for (let i = 0; i < this.latestGuesses.length; i++) {
+            if(this.latestGuesses[i] == 0) {
+                this.latestUl[i].style.color = 'black';
+            } else if (this.latestGuesses[i] < this.answer) {
+                this.latestUl[i].innerText = `▼ ${this.latestGuesses[i]}`;
+                this.latestUl[i].style.color = 'red';
+            } else if (this.latestGuesses[i] > this.answer) {
+                this.latestUl[i].innerText = `▲ ${this.latestGuesses[i]}`;
+                this.latestUl[i].style.color = 'green';
+            }
+        }
     }
 
     
