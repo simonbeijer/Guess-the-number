@@ -234,18 +234,33 @@ body {
     grid-area: p;
 }
 
+
 .play {
-    font-family: 'Cute Font', cursive;
-    font-size: 2.5rem;
-    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
     color: rgb(99,210,151);
     opacity: 0;
     transition: 0.5s;
-    height: 3rem;
-    width: 6rem;
-    border: none;
+    height: 5rem;
+    width: 12rem;
+    background-color: rgb(168, 235, 199);
+    border: 2px solid rgb(92, 92, 92);
+    font-family: 'Cute Font', cursive;
+    border-radius: 10px;
+    color: black;;
+    font-size: 2.5rem;
 }
 
+.play:hover {
+    background-color: rgb(214, 240, 226);
+    cursor: pointer;
+    color: black;
+}
+
+.play:active {
+    height: calc(height - 0.2rem);
+    width: calc(width - 0.2rem);
+    outline: none;
+}
 .btn-add-player {
     padding: 0.5rem 1rem;
     background-color: rgb(168, 235, 199);
@@ -260,42 +275,7 @@ body {
     outline: none;
 }
 
-@media screen and (max-width: 768px) {
 
-    .opponent {
-        width: 80%;
-    }
+.play:focus {
+    outline: none;
 }
-
-@media screen and (max-width: 510px) {
-
-
-    .new-game-area {
-        width: 15rem;
-    }
-
-    .singleplayer, .multiplayer {
-        height: 3rem;
-        width: 7rem;
-        font-size: 1.5rem;    
-    }
-
-    .game-title h1 {
-        font-size: 2rem;
-    }
-    
-    .game-title span {
-        font-size: 4rem;
-        color: rgb(39, 87, 63);
-    }
-    
-    .game-title p {
-        font-size: 1rem;
-    }
-
-    .opponent {
-        width: 100%;
-    }
-}
-
-

@@ -78,6 +78,7 @@ class Gamesetting {
     }
 
     openSinglePlayerGameSettings(newGameArea, gameTitle) {
+        document.querySelector('.playername input').focus();
         this.playBtn.addEventListener('click', () => { 
             this.gamemode = 'singleplayer'; 
             let playerName = document.querySelector('.playername input').value;         

@@ -1,0 +1,37 @@
+@media screen and (max-width: 768px) {
+
+    .opponent {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 510px) {
+
+
+    .new-game-area {
+        width: 15rem;
+    }
+
+    .singleplayer, .multiplayer {
+        height: 3rem;
+        width: 7rem;
+        font-size: 1.5rem;    
+    }
+
+    .game-title h1 {
+        font-size: 2rem;
+    }
+    
+    .game-title span {
+        font-size: 4rem;
+        color: rgb(39, 87, 63);
+    }
+    
+    .game-title p {
+        font-size: 1rem;
+    }
+
+    .opponent {
+        width: 100%;
+    }
+}

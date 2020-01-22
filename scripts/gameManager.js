@@ -8,48 +8,47 @@
 // let answer = this.generator.getAnswer(8, 23);
 
 class Gamemanager {
-    counter;
-    constructor() {
-        this.counter = 0;
+  counter;
+  constructor() {
+    this.counter = 0;
+  }
+
+  getAnswer(min, max) {
+    let low = 0;
+    if (min != null && typeof min == "number") {
+      low = min;
     }
 
-    getAnswer(min, max) {
-        let low = 0;
-        if (min != null && typeof min == 'number') {
-            low = min;
-        }
-
-        let high = 1000000;
-        if (max != null && typeof max == 'number') {
-            high = max;
-        }
-        // returns a random number from "low" to "high"
-        let result = low + Math.floor(Math.random() * (high - low));
-
-        // never return negative value
-        if (result < 0) {
-            result = 0;
-        }
-        return result;
+    let high = 1000000;
+    if (max != null && typeof max == "number") {
+      high = max;
     }
+    // returns a random number from "low" to "high"
+    let result = low + Math.floor(Math.random() * (high - low));
 
+    // never return negative value
+    if (result < 0) {
+      result = 0;
+    }
+    return result;
+  }
 
-
-
-
-    checkAnswer(result, answer) {
-        let string;
-        if(answer == result) {
+  checkAnswer(result, answer) {
+    let string;
+    if (answer > 1 && answer < 100) {
+        if (answer == result) {
             string = "Correct U bitch!";
             // gameOver = true;
         } else if (answer > result) {
             string = "Too High!";
-        }  else if (answer < result) {
+        } else if (answer < result) {
             string = "Too Low!";
-        }
-        return string;
+        } 
+    } else {
+        string = "Invalid number! Choose a number between 1-100";
     }
-
+    return string;
+  }
 }
 
 // test
