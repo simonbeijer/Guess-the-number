@@ -23,7 +23,7 @@ class Gamesetting {
             for (let name of playerInputs) {
                 playerNames.push(name.value);
             }
-            let multiplayergame = new Multiplayergame(playerNames);
+            let multiplayergame = new Multiplayergame(playerNames); 
             multiplayergame.newGame();
             this.newGameDropdown.style.display = 'none';
             this.newGameScreen.classList.add('show');
@@ -88,9 +88,10 @@ class Gamesetting {
         document.querySelector('.playername input').focus();
         this.playBtn.addEventListener('click', () => { 
             this.gamemode = 'singleplayer'; 
-            let playerName = document.querySelector('.playername input').value;         
-            let gamescreen = new Gamescreen(this.gamemode, this.xibitSelected, this.haroldSelected, playerName);
-            gamescreen.newGame();
+            let playerName = document.querySelector('.playername input').value; 
+            let players = [this.xibitSelected, this.haroldSelected, playerName];        
+            let singleplayergame = new Singleplayergame(players);
+            singleplayergame.newGame();
             this.newGameDropdown.style.display = 'none';
             this.newGameScreen.classList.add('show');
         })
