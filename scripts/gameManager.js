@@ -8,9 +8,16 @@
 // let answer = this.generator.getAnswer(8, 23);
 
 class Gamemanager {
+
   counter;
+  lowestNumber;
+  highestNumber;
+
+
   constructor() {
     this.counter = 0;
+    this.lowestNumber = 1;
+    this.highestNumber = 100;
   }
 
   getAnswer(min, max) {
@@ -36,20 +43,50 @@ class Gamemanager {
   checkAnswer(result, answer) {
     let string;
     if (answer > 1 && answer < 100) {
-        if (answer == result) {
-            string = "Correct U bitch!";
-            // gameOver = true;
-        } else if (answer > result) {
-            string = "Too High!";
-        } else if (answer < result) {
-            string = "Too Low!";
-        } 
+      if (answer == result) {
+        string = "Correct U bitch!";
+        // gameOver = true;
+      } else if (answer > result) {
+        string = "Too High!";
+      } else if (answer < result) {
+        string = "Too Low!";
+      }
     } else {
-        string = "Invalid number! Choose a number between 1-100";
+      string = "Invalid number! Choose a number between 1-100";
     }
     return string;
   }
+
+  lowNumber(guess) {
+    let test;
+    test = parseInt(guess)
+    console.log("GUESS highnumber() test", test)
+    if(test > this.lowestNumber) {
+        this.lowestNumber = test
+    }
+
+    console.log(this.lowestNumber);
+    return this.lowestNumber;
+
+
+  }
+
+
+  highNumber(guess) {
+    let test;
+    test = parseInt(guess)
+    console.log("GUESS highnumber() test", test)
+    if(test < this.highestNumber) {
+      this.highestNumber = test
+  }
+    console.log(this.highestNumber);
+    
+    return this.highestNumber;
+  }
+
 }
+
+
 
 // test
 // const generator = new Generator();
