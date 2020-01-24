@@ -79,19 +79,19 @@
 }
 
 .player1 div:first-child {
-    background-color: #DB504A;
+    background-color: #FF7D58;
     display: flex;
     border-radius: 5px;
     margin-right: 0.2rem;
 }
 .player2 div:first-child {
-    background-color: #E3B505;
+    background-color: #4086AB;
     display: flex;
     border-radius: 5px;
     margin-right: 0.2rem;
 }
 .player3 div:first-child {
-    background-color: #4F6D7A;
+    background-color: #FFB358;
     display: flex;
     border-radius: 5px;
     margin-right: 0.2rem;

@@ -8,10 +8,10 @@
     <link href="gameScreen.css" rel="stylesheet">
     <link rel="stylesheet" href="mediaqueries.css">
     <script src="https://kit.fontawesome.com/8bcd668c2a.js" crossorigin="anonymous"></script>
-    <script src="scripts/main.js"></script>
-    <script src="scripts/gameSetting.js"></script>
     <script src="scripts/singleplayergame.js"></script>
     <script src="scripts/multiplayergame.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/gameSetting.js"></script>
     <script src="scripts/startScreen.js"></script>
     <script src="scripts/gameManager.js"></script>
     <script src="scripts/bot.js"></script>
@@ -29,11 +29,17 @@
     <div class="new-game-area">
         <div class="new-game">
             <button class="singleplayer" type="button">Singleplayer</button>
-            <button class="multiplayer" type="button">Multiplayer</button>
-        </div>
 
-        <div class="game-info">
-            <p>Hover game mode to reveal more...</p>
+            <button class="multiplayer" type="button">Multiplayer</button>
+
+        </div>
+        <div class="new-game-info">
+            <div class="new-game-info">
+                <div class="singleplayer-info">Play against bots.</div>
+
+                <div class="multiplayer-info">Play against your friends.</div>
+
+            </div>
         </div>
     </div>
 
@@ -56,13 +62,13 @@
             <div class="opponent2 opponent">
                 <img src="img/op2.png" alt="">
                 <h3>Xibit</h3>
-                <p class="info">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p class="info">
+                <p class="info">Xibit is a smart bot. Motto - Pimp my ride.</p class="info">
                     <p class="difficulty"><span class="hard">Hard</span> <i class="fas fa-circle"></i> <i class="fas fa-circle"></i> <i class="fas fa-circle"></i></p>
             </div>
             <div class="opponent3 opponent">
                 <img src="img/op3.png" alt="">
                 <h3>Harold</h3>
-                <p class="info">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p class="info">
+                <p class="info">Harold is a dumb bot.    Motto - I love Scrum</p class="info">
                 <p class="difficulty"><span class="easy">Easy</span> <i class="fas fa-circle"></i></p class="difficulty">
             </div>
         </div>

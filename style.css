@@ -39,6 +39,17 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.new-game-info {
+    width: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .game-info {
@@ -74,9 +85,22 @@ body {
     border: 2px solid rgb(92, 92, 92);
     font-family: 'Cute Font', cursive;
     border-radius: 10px;
-    color: black;;
+    color: black;
     font-size: 2.5rem;    
 }
+
+.singleplayer-info, .multiplayer-info {
+    height: 16rem;
+    width: 12rem;
+    background-color: rgba(83, 88, 86, 0.116);
+    border: 2px solid rgb(92, 92, 92);
+    font-family: 'Cute Font', cursive;
+    border-radius: 10px;
+    color: black;;
+    font-size: 1.5rem;
+    text-align: center; 
+}
+
 
 .singleplayer:hover, .multiplayer:hover {
     background-color: rgb(214, 240, 226);
@@ -217,10 +241,6 @@ body {
 
 .hard {
     color: rgb(156, 26, 26);
-}
-
-.medium {
-    color: rgb(255, 136, 0);
 }
 
 .easy {

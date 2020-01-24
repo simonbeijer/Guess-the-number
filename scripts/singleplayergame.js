@@ -45,19 +45,11 @@ class Singleplayergame {
         this.answer = this.gameManager.getAnswer(1, 100);
         this.bot = new Bot();
         this.lowestNumber = 1;
-        this.highestNumber = 100;   
-
+        this.highestNumber = 100;
     }
 
-    newGame() {
+    newGame() {        
 
-        this.player1input.addEventListener('keyup', function (event) {
-            if (event.keyCode == 13) {
-                event.preventDefault();
-                
-            }
-        })
-        
         this.latest.style.opacity = 1;
         this.playerNames.push(this.players[2]);
 
@@ -91,12 +83,12 @@ class Singleplayergame {
                 this.playerWon = true;
                 this.playerDone = true;
             } else if (this.player1input.value < this.answer) {
-                this.infoScreen.innerText = `${this.playerNames[0]} guessed to LOW`;
+                this.infoScreen.innerText = `${this.playerNames[0]} guessed too LOW`;
                 this.playerDone = true;
                 this.lowestNumber = this.gameManager.lowNumber(this.player1input.value);
                 
             } else if (this.player1input.value > this.answer) {
-                this.infoScreen.innerText = `${this.playerNames[0]} guessed to HIGH`;
+                this.infoScreen.innerText = `${this.playerNames[0]} guessed too HIGH`;
                 this.playerDone = true;
                 this.highestNumber = this.gameManager.highNumber(this.player1input.value);
             }
@@ -112,11 +104,18 @@ class Singleplayergame {
                 }
             }
         })
+
+        this.player1input.addEventListener('keydown', e => {
+            if (e.keyCode === 13) {
+                e.preventDefault();
+                this.guessBtn1.click();
+            }
+        })
     }
 
     player1turn() {
         document.getElementById('player1input').focus();
-        this.player1frame.style.border = 'solid black 5px';
+        this.player1frame.style.border = 'solid black 3px';
         this.player2frame.style.border = 'none';
         this.player3frame.style.border = 'none';
         this.guessBtn1.disabled = false;
@@ -125,7 +124,7 @@ class Singleplayergame {
         let player1timer = 0;
         let t = setInterval(() => {
             player1timer += 0.1;
-            this.player1frame.style.background = `-webkit-linear-gradient(180deg, transparent ${player1timer}%, #DB504A ${player1timer}%)`;
+            this.player1frame.style.background = `-webkit-linear-gradient(180deg, transparent ${player1timer}%, #FF7D58 ${player1timer}%)`;
             if (player1timer >= 100 || this.playerDone === true) {
                 this.stopPlayer1timer(t);
             }
@@ -135,7 +134,7 @@ class Singleplayergame {
     stopPlayer1timer(t) {
         clearInterval(t);
         this.playerDone = false;
-        this.player1frame.style.background = `#DB504A`;
+        this.player1frame.style.background = `#FF7D58`;
         this.guessBtn1.disabled = true;
         this.guessBtn1.style.opacity = 0.3;
         if (this.playerWon === false) {
@@ -145,7 +144,7 @@ class Singleplayergame {
 
     player2turn() {
         document.getElementById('player2input').focus();
-        this.player2frame.style.border = 'solid black 5px';
+        this.player2frame.style.border = 'solid black 3px';
         this.player1frame.style.border = 'none';
         this.player3frame.style.border = 'none';
         this.guessBtn2.disabled = false;
@@ -155,7 +154,7 @@ class Singleplayergame {
         this.xibitguesses();
         let t = setInterval(() => {
             player2timer += 0.1;
-            this.player2frame.style.background = `-webkit-linear-gradient(180deg, transparent ${player2timer}%, #E3B505 ${player2timer}%)`;
+            this.player2frame.style.background = `-webkit-linear-gradient(180deg, transparent ${player2timer}%, #4086AB ${player2timer}%)`;
             if (player2timer >= 100 || this.playerDone === true) {
                 this.stopPlayer2timer(t);
             }
@@ -165,7 +164,7 @@ class Singleplayergame {
     stopPlayer2timer(t) {
         clearInterval(t);
         this.playerDone = false;
-        this.player2frame.style.background = `#E3B505`;
+        this.player2frame.style.background = `#4086AB`;
         this.guessBtn2.disabled = true;
         this.guessBtn2.style.opacity = 0.3;
         this.player2frame.style.border = 'none';
@@ -178,7 +177,7 @@ class Singleplayergame {
 
     player3turn() {
         document.getElementById('player3input').focus();
-        this.player3frame.style.border = 'solid black 5px';
+        this.player3frame.style.border = 'solid black 3px';
         this.player2frame.style.border = 'none';
         this.player1frame.style.border = 'none';
         this.guessBtn3.disabled = false;
@@ -188,7 +187,7 @@ class Singleplayergame {
         this.haroldguesses();
         let t = setInterval(() => {
             player3timer += 0.1;
-            this.player3frame.style.background = `-webkit-linear-gradient(180deg, transparent ${player3timer}%, #4F6D7A ${player3timer}%)`;
+            this.player3frame.style.background = `-webkit-linear-gradient(180deg, transparent ${player3timer}%, #FFB358 ${player3timer}%)`;
             if (player3timer >= 100 || this.playerDone === true) {
                 this.stopPlayer3timer(t);
             }
@@ -198,7 +197,7 @@ class Singleplayergame {
     stopPlayer3timer(t) {
         clearInterval(t);
         this.playerDone = false;
-        this.player3frame.style.background = `#4F6D7A`;
+        this.player3frame.style.background = `#FFB358`;
         this.guessBtn3.disabled = true;
         this.guessBtn3.style.opacity = 0.3;
         if (this.playerWon === false) {
@@ -221,12 +220,12 @@ class Singleplayergame {
             this.playerWon = true;
             this.playerDone = true;
         } else if (this.player2input.value < this.answer) {
-            this.infoScreen.innerText = `${this.playerNames[1]} guessed to LOW`;
+            this.infoScreen.innerText = `${this.playerNames[1]} guessed too LOW`;
             this.playerDone = true;
             this.lowestNumber = this.gameManager.lowNumber(this.player2input.value);
             
         } else if (this.player2input.value > this.answer) {
-            this.infoScreen.innerText = `${this.playerNames[1]} guessed to HIGH`;
+            this.infoScreen.innerText = `${this.playerNames[1]} guessed too HIGH`;
             this.playerDone = true;
             this.highestNumber = this.gameManager.highNumber(this.player2input.value);
         
@@ -253,11 +252,11 @@ class Singleplayergame {
             this.playerWon = true;
             this.playerDone = true;
         } else if (this.player3input.value < this.answer) {
-            this.infoScreen.innerText = `${this.playerNames[2]} guessed to LOW`;
+            this.infoScreen.innerText = `${this.playerNames[2]} guessed too LOW`;
             this.playerDone = true;
             this.lowestNumber = this.gameManager.lowNumber(this.player3input.value);
         } else if (this.player3input.value > this.answer) {
-            this.infoScreen.innerText = `${this.playerNames[2]} guessed to HIGH`;
+            this.infoScreen.innerText = `${this.playerNames[2]} guessed too HIGH`;
             this.playerDone = true;
             this.highestNumber = this.gameManager.highNumber(this.player3input.value);
         }
@@ -269,11 +268,11 @@ class Singleplayergame {
             if (this.latestGuesses[i] == 0) {
                 this.latestUl[i].style.color = 'black';
             } else if (this.latestGuesses[i] < this.answer) {
-                this.latestUl[i].innerText = `▼ ${this.latestGuesses[i]}`;
-                this.latestUl[i].style.color = 'red';
-            } else if (this.latestGuesses[i] > this.answer) {
                 this.latestUl[i].innerText = `▲ ${this.latestGuesses[i]}`;
                 this.latestUl[i].style.color = 'green';
+            } else if (this.latestGuesses[i] > this.answer) {
+                this.latestUl[i].innerText = `▼ ${this.latestGuesses[i]}`;
+                this.latestUl[i].style.color = 'red';
             }
         }
     }

@@ -14,6 +14,7 @@ class Gamesetting {
     haroldSelected = false;
     gamemode;
     playersAmount = 1;
+    counter = 0;
 
     openMultiplayerGameSettings(newGameArea, gameTitle) {
         this.playBtn.addEventListener('click', () => {
@@ -65,13 +66,17 @@ class Gamesetting {
     }
 
     createNewPlayer(id) {
-        const colors = ['blue', 'green', 'red', 'yellow', 'pink', 'orange', 'purple'];
+        const colors = ['black', 'black', 'red', 'yellow', 'pink', 'orange', 'purple'];
         const result = document.createElement('div');
         result.id = id;
         result.className = 'playername';
-
+        this.counter++;
         const avatar = document.createElement('i');
-        avatar.className = 'fas fa-user-ninja fa-7x';
+        if(this.counter == 1) {
+            avatar.className = 'fas fa-user-secret fa-7x';
+        } else {
+            avatar.className = 'fas fa-user-astronaut fa-7x';
+        }
         avatar.setAttribute('aria-hidden', 'true');
         avatar.style.color = colors[this.playersAmount - 1];
         result.append(avatar);
