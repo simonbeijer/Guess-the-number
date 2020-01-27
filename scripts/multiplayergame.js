@@ -137,15 +137,31 @@ class Multiplayergame {
                 }
             }
         })
-    }
 
-    player1turn() {
         this.player1input.addEventListener('keydown', e => {
             if (e.keyCode === 13) {
                 e.preventDefault();
                 this.guessBtn1.click();
             }
         })
+
+        this.player2input.addEventListener('keydown', e => {
+            if (e.keyCode === 13) {
+                e.preventDefault();
+                this.guessBtn2.click();
+            }
+        })
+
+        this.player3input.addEventListener('keydown', e => {
+            if (e.keyCode === 13) {
+                e.preventDefault();
+                this.guessBtn3.click();
+            }
+        })
+    }
+
+    player1turn() {
+        
         document.getElementById('player1input').focus();
         this.player1frame.style.border = 'solid black 3px';
         this.player2frame.style.border = 'none';
@@ -175,12 +191,7 @@ class Multiplayergame {
     }
 
     player2turn() {
-        this.player2input.addEventListener('keydown', e => {
-            if (e.keyCode === 13) {
-                e.preventDefault();
-                this.guessBtn2.click();
-            }
-        })
+        
         document.getElementById('player2input').focus();
         this.player2frame.style.border = 'solid black 3px';
         this.player1frame.style.border = 'none';
@@ -213,12 +224,7 @@ class Multiplayergame {
     }
 
     player3turn() {
-        this.player3input.addEventListener('keydown', e => {
-            if (e.keyCode === 13) {
-                e.preventDefault();
-                this.guessBtn3.click();
-            }
-        })
+        
         document.getElementById('player3input').focus();
         this.player3frame.style.border = 'solid black 3px';
         this.player2frame.style.border = 'none';
