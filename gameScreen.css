@@ -78,8 +78,9 @@
     opacity: 1;
 }
 
-.player1{
+.player1 {
     grid-area: player1;
+    justify-content: center;  
 }
 
 .player img{
@@ -105,20 +106,22 @@
     margin-right: 0.2rem;
 }
 
-.player2{
-    grid-area: player2;    
+.player2 {
+    grid-area: player2;  
+    justify-content: center;  
 }
 
 
-.player3{
-    grid-area: player3;    
+.player3 {
+    grid-area: player3; 
+    justify-content: center;  
 }
 
 
 .player{    
     display:flex;
-    justify-content: space-evenly;
-    align-items: center; 
+    /* align-items: center; 
+    justify-content: space-evenly; */
 }
 
 .player p {
