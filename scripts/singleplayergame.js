@@ -11,6 +11,7 @@ class Singleplayergame {
     playerNames = [];
     lowestNumber;
     highestNumber;
+    gameOn = false;
 
 
     // Player1
@@ -42,7 +43,6 @@ class Singleplayergame {
     constructor(players) {
         this.players = players;
         this.gameManager = new Gamemanager();
-        this.answer = this.gameManager.getAnswer(1, 100);
         this.bot = new Bot();
         this.lowestNumber = 1;
         this.highestNumber = 100;
@@ -78,18 +78,26 @@ class Singleplayergame {
         }
 
         this.startGameBtn.addEventListener('click', () => {
-            this.player1turn();
+
+            if (this.gameOn === false) {
+                this.gameOn = true;
+                this.player1turn();
+                this.answer = this.gameManager.getAnswer(1, 100);
+                this.infoScreen.innerText = '';
+            } else {
+            }
         })
 
         this.guessBtn1.addEventListener('click', () => {
             this.latestGuesses.pop();
             this.latestGuesses.unshift(this.player1input.value);
             this.showLatestGuesses();
-            if (this.player1input.value > 1 && this.player1input.value < 100) {
+            if (this.player1input.value > 0 && this.player1input.value < 100) {
                 if (this.player1input.value == this.answer) {
                     this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[0]}. The correct number was ${this.answer}.`;
                     this.playerWon = true;
                     this.playerDone = true;
+                    this.gameOn = false;
                 } else if (this.player1input.value < this.answer) {
                     this.infoScreen.innerText = `${this.playerNames[0]} guessed too LOW`;
                     this.playerDone = true;
@@ -99,9 +107,6 @@ class Singleplayergame {
                     this.infoScreen.innerText = `${this.playerNames[0]} guessed too HIGH`;
                     this.playerDone = true;
                     this.highestNumber = this.gameManager.highNumber(this.player1input.value);
-                } if (this.player1input.value < 1 || this.player1input.value > 100) {
-                    this.infoScreen.innerText = `${this.playerNames[1]} guessed an invalid number`;
-                    this.playerDone = true;
                 }
             } else {
                 this.infoScreen.innerText = `${this.playerNames[0]} guessed an invalid number`;
@@ -234,6 +239,7 @@ class Singleplayergame {
                 this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[1]}. The correct number was ${this.answer}.`;
                 this.playerWon = true;
                 this.playerDone = true;
+                this.gameOn = false;
             } else if (this.player2input.value < this.answer) {
                 this.infoScreen.innerText = `${this.playerNames[1]} guessed too LOW`;
                 this.playerDone = true;
@@ -266,6 +272,7 @@ class Singleplayergame {
                 this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[2]}. The correct number was ${this.answer}.`;
                 this.playerWon = true;
                 this.playerDone = true;
+                this.gameOn = false;
             } else if (this.player3input.value < this.answer) {
                 this.infoScreen.innerText = `${this.playerNames[2]} guessed too LOW`;
                 this.playerDone = true;
