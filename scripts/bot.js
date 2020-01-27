@@ -26,7 +26,7 @@ class Bot {
         return this.numberlow;
 
     }
-        // Tar lägsta/högsta värdet och tar hälften, om det är ett decimaltal tar den random av närmsta tal över och under
+    // Tar lägsta/högsta värdet och tar hälften, om det är ett decimaltal tar den random av närmsta tal över och under
     smartbot(low, high) {
 
         this.numberhigh; 
