@@ -35,6 +35,14 @@
     box-shadow: 2px 2px 4px rgb(130, 189, 158);
 }
 
+.gameLeader h1{
+    position: fixed;
+    left: 30rem;
+    top:0;
+    font-size: 2.5rem;
+    color: #084C61;
+}
+
 .gameLeader div:hover {
     cursor: pointer;
 }
