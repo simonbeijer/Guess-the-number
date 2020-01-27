@@ -37,3 +37,13 @@ class Startscreen {
     }
     
 }
+
+function hamburgerMenu() {
+    var x = document.getElementsByClassName("info-screen")[0];
+
+    if (x.style.display === "flex") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "flex";
+    }
+}
