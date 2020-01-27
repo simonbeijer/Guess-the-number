@@ -48,9 +48,12 @@ class Multiplayergame {
 
         if (this.playerNames.length === 2) {
             this.player3.style.visibility = 'hidden';
+            this.player2Image.setAttribute('src', 'img/user-secret-solid.svg');
         }
         if (this.playerNames.length === 3) {
             this.player3Name.innerText = this.playerNames[2];
+            this.player2Image.setAttribute('src', 'img/user-secret-solid.svg')
+            this.player3Image.setAttribute('src', 'img/user-astronaut-solid.svg');
         }
 
         this.startGameBtn.addEventListener('click', () => {
