@@ -13,23 +13,23 @@ class Startscreen {
         //     this.gameSetting.openMultiPlayerGameSettings(this.newGameArea, this.gameTitle);
         //     this.gameSetting.selectOpponent();
         // })
-        this.multiPlayerBtn.addEventListener('mouseover', () => {
-            this.gameInfo.innerText = 'Play against other players.';
-        })
-        this.multiPlayerBtn.addEventListener('mouseout', () => {
-            this.gameInfo.innerText = 'Hover game mode to reveal more...';
-        })
+        // this.multiPlayerBtn.addEventListener('mouseover', () => {
+        //     this.gameInfo.innerText = 'Play against other players.';
+        // })
+        // this.multiPlayerBtn.addEventListener('mouseout', () => {
+        //     this.gameInfo.innerText = 'Hover game mode to reveal more...';
+        // })
     
         this.singlePlayerBtn.addEventListener('click', () => {
             this.gameSetting.openSinglePlayerGameSettings(this.newGameArea, this.gameTitle);
             this.gameSetting.selectOpponent();
         })
-        this.singlePlayerBtn.addEventListener('mouseover', () => {
-           this.gameInfo.innerText = 'Play against bots...';
-        })
-        this.singlePlayerBtn.addEventListener('mouseout', () => {
-            this.gameInfo.innerText = 'Hover game mode to reveal more...';
-        })
+        // this.singlePlayerBtn.addEventListener('mouseover', () => {
+        //    this.gameInfo.innerText = 'Play against bots...';
+        // })
+        // this.singlePlayerBtn.addEventListener('mouseout', () => {
+        //     this.gameInfo.innerText = 'Hover game mode to reveal more...';
+        // })
 
         this.multiPlayerBtn.addEventListener('click', () => {
             this.gameSetting.openMultiplayerGameSettings(this.newGameArea, this.gameTitle);

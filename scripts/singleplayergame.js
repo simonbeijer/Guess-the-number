@@ -65,9 +65,16 @@ class Singleplayergame {
 
         if (this.playerNames.length === 2) {
             this.player3.style.visibility = 'hidden';
+            if (this.player2Name.innerText === 'Xibit') {
+                this.player2Image.setAttribute('src', 'img/op2selected.png');
+            } else if (this.player2Name.innerText === 'Harold') {
+                this.player2Image.setAttribute('src', 'img/op3selected.png');
+            }
         }
         if (this.playerNames.length === 3) {
             this.player3Name.innerText = this.playerNames[2];
+            this.player2Image.setAttribute('src', 'img/op2selected.png');
+            this.player3Image.setAttribute('src', 'img/op3selected.png');
         }
 
         this.startGameBtn.addEventListener('click', () => {
