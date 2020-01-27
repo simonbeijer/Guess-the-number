@@ -91,6 +91,9 @@ class Singleplayergame {
                 this.infoScreen.innerText = `${this.playerNames[0]} guessed too HIGH`;
                 this.playerDone = true;
                 this.highestNumber = this.gameManager.highNumber(this.player1input.value);
+            } if (this.player1input.value < 1 || this.player1input.value > 100) {
+                this.infoScreen.innerText = `${this.playerNames[1]} guessed an invalid number`;
+                this.playerDone = true;
             }
             this.player1input.value = '';
         })

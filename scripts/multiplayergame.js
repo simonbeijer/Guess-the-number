@@ -71,6 +71,9 @@ class Multiplayergame {
             } else if (this.player1input.value > this.answer) {
                 this.infoScreen.innerText = `${this.playerNames[0]} guessed too HIGH`;
                 this.playerDone = true;
+            } if (this.player1input.value < 1 || this.player1input.value > 100) {
+                this.infoScreen.innerText = `${this.playerNames[1]} guessed an invalid number`;
+                this.playerDone = true;
             }
             this.player1input.value = '';
         })
@@ -88,6 +91,9 @@ class Multiplayergame {
             } else if (this.player2input.value > this.answer) {
                 this.infoScreen.innerText = `${this.playerNames[1]} guessed too HIGH`;
                 this.playerDone = true;
+            } if (this.player2input.value < 1 || this.player2input.value > 100) {
+                this.infoScreen.innerText = `${this.playerNames[1]} guessed an invalid number`;
+                this.playerDone = true;
             }
             this.player2input.value = '';
         })
@@ -104,6 +110,9 @@ class Multiplayergame {
                 this.playerDone = true;
             } else if (this.player3input.value > this.answer) {
                 this.infoScreen.innerText = `${this.playerNames[2]} guessed too HIGH`;
+                this.playerDone = true;
+            } if (this.player3input.value < 1 || this.player3input.value > 100) {
+                this.infoScreen.innerText = `${this.playerNames[1]} guessed an invalid number`;
                 this.playerDone = true;
             }
             this.player3input.value = '';
