@@ -47,3 +47,13 @@ function hamburgerMenu() {
       x.style.display = "flex";
     }
 }
+
+function highscoreMenu() {
+    var x = document.getElementsByClassName("info-screenh")[0];
+
+    if (x.style.display === "flex") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "flex";
+    }
+}
