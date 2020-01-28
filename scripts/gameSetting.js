@@ -17,6 +17,7 @@ class Gamesetting {
     counter = 0;
 
     openMultiplayerGameSettings(newGameArea, gameTitle) {
+        document.querySelector('.playername input').focus();
         this.playBtn.addEventListener('click', () => {
             this.gamemode = 'multiplayer';
             let playerInputs = document.querySelectorAll('.playername input');
