@@ -137,7 +137,23 @@ body {
 .highscore {
     position: fixed;
     right: 5%;
-    top: 3%;
+    top: 3%; 
+}
+
+.highscore-list{
+    display: none;
+    background-color: white;
+    position: fixed;
+    width: 80vw;
+    height: 80vh;
+    border-radius: 16px;
+    z-index: 100;
+}
+
+.highscore-list ul{
+    font-size: 4rem;
+    list-style-type: none;
+
 }
 
 .info-screen >* p {
