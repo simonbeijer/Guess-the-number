@@ -49,11 +49,14 @@ function hamburgerMenu() {
 }
 
 function highscoreMenu() {
-    var x = document.getElementsByClassName("info-screenh")[0];
+     var x = document.getElementsByClassName("highscore-list")[0];
 
-    if (x.style.display === "flex") {
-      x.style.display = "none";
-    } else {
+     if (x.style.display === "flex") {
+       x.style.display = "none";
+     } else {
       x.style.display = "flex";
     }
-}
+  }
+
+  
+
