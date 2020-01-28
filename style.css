@@ -134,6 +134,12 @@ body {
     z-index: 100;
 }
 
+.highscore {
+    position: fixed;
+    right: 5%;
+    top: 3%;
+}
+
 .info-screen >* p {
     font-size: 1.5rem;
 }
