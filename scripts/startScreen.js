@@ -7,7 +7,8 @@ class Startscreen {
   newGameArea = document.querySelector('.new-game-area');
   gameSetting = new Gamesetting();
   gameManager = new Gamemanager();
-  highscore = document.getElementById("clickme");
+  highscore = document.querySelector('.highscore');
+  infoIcon = document.querySelector('.hamburger');
 
 
 
@@ -40,28 +41,35 @@ class Startscreen {
   
     this.highscore.addEventListener('click', () => {
         this.highscoreMenu();
+        
       })
+
+    this.infoIcon.addEventListener('click', () => {
+      this.hamburgerMenu();
+    })
+
+
   }
 
   
-
-
   highscoreMenu() {
-    if (this.highscore.style.display === "flex") {
-      this.highscore.style.display = "none";
+    let highScoreList = document.querySelector('.highscore-list');
+    
+    if (highScoreList.style.display === "flex") {
+      highScoreList.style.display = "none";
     } else {
-      this.highscore.style.display = "flex";
-      this.highscore.innerHTML = this.gameManager.getLocalStorage();
+      highScoreList.style.display = "flex";
+      highScoreList.innerHTML = this.gameManager.getLocalStorage();
     }
 }
 
   hamburgerMenu() {
-    var x = document.getElementsByClassName("info-screen")[0];
+    let infoScreenList = document.querySelector('.info-screen');
 
-    if (x.style.display === "flex") {
-      x.style.display = "none";
+    if (infoScreenList.style.display === "flex") {
+      infoScreenList.style.display = "none";
     } else {
-      x.style.display = "flex";
+      infoScreenList.style.display = "flex";
     }
   }
 
