@@ -98,6 +98,7 @@ class Singleplayergame {
                     this.playerWon = true;
                     this.playerDone = true;
                     this.gameOn = false;
+                    winEffects(this.playerNames[0], 1);
                 } else if (this.player1input.value < this.answer) {
                     this.infoScreen.innerText = `${this.playerNames[0]} guessed too LOW`;
                     this.playerDone = true;
@@ -240,6 +241,7 @@ class Singleplayergame {
                 this.playerWon = true;
                 this.playerDone = true;
                 this.gameOn = false;
+                winEffects(this.playerNames[1], 2);
             } else if (this.player2input.value < this.answer) {
                 this.infoScreen.innerText = `${this.playerNames[1]} guessed too LOW`;
                 this.playerDone = true;
@@ -273,6 +275,7 @@ class Singleplayergame {
                 this.playerWon = true;
                 this.playerDone = true;
                 this.gameOn = false;
+                winEffects(this.playerNames[2], 3);
             } else if (this.player3input.value < this.answer) {
                 this.infoScreen.innerText = `${this.playerNames[2]} guessed too LOW`;
                 this.playerDone = true;

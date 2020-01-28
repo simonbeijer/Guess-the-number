@@ -1,0 +1,237 @@
+<?xml version="1.0"?>
+<svg
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:cc="http://creativecommons.org/ns#"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    xmlns:ns1="http://sozi.baierouge.fr"
+    id="svg3561"
+    viewBox="0 0 53.149 22.424"
+    version="1.1"
+  >
+  <defs
+      id="defs3563"
+    >
+    <linearGradient
+        id="linearGradient8195"
+        y2="28.747"
+        gradientUnits="userSpaceOnUse"
+        x2="129.21"
+        y1="24.85"
+        x1="98.506"
+      >
+      <stop
+          id="stop8191"
+          stop-color="#fc0"
+          offset="0"
+      />
+      <stop
+          id="stop8193"
+          stop-color="#fff"
+          offset="1"
+      />
+    </linearGradient
+    >
+  </defs
+  >
+  <g
+      id="layer1"
+      transform="translate(-430.57 -509.72)"
+    >
+    <rect
+        id="rect8181"
+        style="color:#000000"
+        transform="matrix(-.5 -.86603 -.86603 .5 0 0)"
+        height="28.032"
+        width="1.8745"
+        y="-160.8"
+        x="-688.91"
+        fill="#00f"
+    />
+    <path
+        id="rect8183"
+        d="m480.92 511.34-24.295 14.001 0.95017 1.6458 0.92808 1.6075 24.265-14.01-0.92808-1.6075-0.91999-1.6377z"
+        style="color:#000000"
+        fill="#d40000"
+    />
+    <rect
+        id="rect8187"
+        style="color:#000000"
+        transform="matrix(-.5 -.86603 -.86603 .5 0 0)"
+        height="28.032"
+        width="1.8745"
+        y="-160.8"
+        x="-683.29"
+        fill="#00f"
+    />
+    <rect
+        id="rect8206"
+        style="color:#000000"
+        transform="rotate(-60.001)"
+        height="28.032"
+        width="1.8745"
+        y="630.99"
+        x="-231.77"
+        fill="#00f"
+    />
+    <path
+        id="rect8208"
+        d="m433.37 511.34-0.91998 1.6377-0.95827 1.6156 24.295 14.001 0.92807-1.6075 0.91999-1.6377-24.265-14.01z"
+        style="color:#000000"
+        fill="#d40000"
+    />
+    <rect
+        id="rect8212"
+        style="color:#000000"
+        transform="rotate(-60.001)"
+        height="28.032"
+        width="1.8745"
+        y="630.99"
+        x="-226.15"
+        fill="#00f"
+    />
+    <path
+        id="path8169"
+        d="m121.07 27.482c0 4.0928-3.3179 7.4107-7.4107 7.4107s-7.4107-3.3179-7.4107-7.4107 3.3179-7.4107 7.4107-7.4107 7.4107 3.3179 7.4107 7.4107z"
+        style="color:#000000"
+        fill="#784421"
+        transform="matrix(1 0 0 -.90203 343.48 549.34)"
+    />
+    <path
+        id="path8165"
+        d="m121.07 27.482c0 4.0928-3.3179 7.4107-7.4107 7.4107s-7.4107-3.3179-7.4107-7.4107 3.3179-7.4107 7.4107-7.4107 7.4107 3.3179 7.4107 7.4107z"
+        style="color:#000000"
+        fill="url(#linearGradient8195)"
+        transform="matrix(1 0 0 -.90203 343.48 550.25)"
+    />
+    <path
+        id="path8197"
+        d="m121.07 27.482c0 4.0928-3.3179 7.4107-7.4107 7.4107s-7.4107-3.3179-7.4107-7.4107 3.3179-7.4107 7.4107-7.4107 7.4107 3.3179 7.4107 7.4107z"
+        style="color:#000000"
+        fill="#784421"
+        transform="matrix(.72044 0 0 -.64986 375.26 543.32)"
+    />
+    <path
+        id="path8201"
+        d="m457.14 520.64c-2.8683 0-5.2184 2.0343-5.3438 4.5938 0.12534 2.5594 2.4754 4.5938 5.3438 4.5938 2.8683 0 5.2184-2.0343 5.3438-4.5938-0.12534-2.5594-2.4754-4.5938-5.3438-4.5938z"
+        style="color:#000000"
+        fill="#ffd42a"
+    />
+    <path
+        id="path12960"
+        d="m276.12 427.66-1.3438 0.28125a0.11509 0.11509 0 0 0 -0.0312 0.0312 0.11509 0.11509 0 0 0 -0.0312 0.0312 0.11509 0.11509 0 0 0 -0.0312 0.0312 0.11509 0.11509 0 0 0 0 0.0312v1a0.11509 0.11509 0 0 0 0 0.0312 0.11509 0.11509 0 0 0 0.0312 0.0312 0.11509 0.11509 0 0 0 0.0312 0.0312 0.11509 0.11509 0 0 0 0.0312 0.0312 0.11509 0.11509 0 0 0 0.0312 0 0.11509 0.11509 0 0 0 0.0312 0l1.1875-0.25v3.4688h-1.1875a0.11509 0.11509 0 0 0 -0.0312 0 0.11509 0.11509 0 0 0 -0.0312 0.0312 0.11509 0.11509 0 0 0 -0.0312 0.0312 0.11509 0.11509 0 0 0 -0.0312 0.0312 0.11509 0.11509 0 0 0 0 0.0312v1.0312a0.11509 0.11509 0 0 0 0 0.0312 0.11509 0.11509 0 0 0 0.0312 0.0312 0.11509 0.11509 0 0 0 0.0312 0.0312 0.11509 0.11509 0 0 0 0.0312 0.0312 0.11509 0.11509 0 0 0 0.0312 0h4.0625a0.11509 0.11509 0 0 0 0.0312 0 0.11509 0.11509 0 0 0 0.0312 -0.0312 0.11509 0.11509 0 0 0 0.0312 -0.0312 0.11509 0.11509 0 0 0 0.0312 -0.0312 0.11509 0.11509 0 0 0 0 -0.0312v-1.0312a0.11509 0.11509 0 0 0 0 -0.0312 0.11509 0.11509 0 0 0 -0.0312 -0.0312 0.11509 0.11509 0 0 0 -0.0312 -0.0312 0.11509 0.11509 0 0 0 -0.0312 -0.0312 0.11509 0.11509 0 0 0 -0.0312 0h-1.1875v-4.625a0.11509 0.11509 0 0 0 0 -0.0312 0.11509 0.11509 0 0 0 -0.0312 -0.0312 0.11509 0.11509 0 0 0 -0.0312 -0.0312 0.11509 0.11509 0 0 0 -0.0312 -0.0312 0.11509 0.11509 0 0 0 -0.0312 0h-1.4375a0.11509 0.11509 0 0 0 -0.0312 0z"
+        transform="matrix(1.0005 0 0 .99952 180.16 94.894)"
+    />
+    <g
+        id="text8214"
+        transform="scale(1.0005 .99952)"
+        fill="#fff6d5"
+      >
+      <path
+          id="path3628"
+          fill="#fff6d5"
+          d="m454.92 527.58h1.318v-3.7408l-1.3529 0.27911v-1.0156l1.3451-0.27911h1.4188v4.7564h1.318v1.0311h-4.047v-1.0311"
+      />
+    </g
+    >
+  </g
+  >
+  <metadata
+    >
+    <rdf:RDF
+      >
+      <cc:Work
+        >
+        <dc:format
+          >image/svg+xml</dc:format
+        >
+        <dc:type
+            rdf:resource="http://purl.org/dc/dcmitype/StillImage"
+        />
+        <cc:license
+            rdf:resource="http://creativecommons.org/licenses/publicdomain/"
+        />
+        <dc:publisher
+          >
+          <cc:Agent
+              rdf:about="http://openclipart.org/"
+            >
+            <dc:title
+              >Openclipart</dc:title
+            >
+          </cc:Agent
+          >
+        </dc:publisher
+        >
+        <dc:title
+          >Medal</dc:title
+        >
+        <dc:date
+          >2013-09-12T10:45:33</dc:date
+        >
+        <dc:description
+          >medal with ribbon</dc:description
+        >
+        <dc:source
+          >https://openclipart.org/detail/183388/medal-by-special_k-183388</dc:source
+        >
+        <dc:creator
+          >
+          <cc:Agent
+            >
+            <dc:title
+              >Special_K</dc:title
+            >
+          </cc:Agent
+          >
+        </dc:creator
+        >
+        <dc:subject
+          >
+          <rdf:Bag
+            >
+            <rdf:li
+              >first place</rdf:li
+            >
+            <rdf:li
+              >medal</rdf:li
+            >
+            <rdf:li
+              >prize</rdf:li
+            >
+            <rdf:li
+              >win</rdf:li
+            >
+            <rdf:li
+              >winner</rdf:li
+            >
+          </rdf:Bag
+          >
+        </dc:subject
+        >
+      </cc:Work
+      >
+      <cc:License
+          rdf:about="http://creativecommons.org/licenses/publicdomain/"
+        >
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#Reproduction"
+        />
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#Distribution"
+        />
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#DerivativeWorks"
+        />
+      </cc:License
+      >
+    </rdf:RDF
+    >
+  </metadata
+  >
+</svg
+>

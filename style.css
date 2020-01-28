@@ -348,3 +348,17 @@ body {
 .play:focus {
     outline: none;
 }
+
+.winnercup {
+    /*background-color: red;*/
+    height: 350px;
+    width: 350px;
+    position: absolute;
+    top: -20px;
+    /*opacity: 0.5;*/
+}
+
+.winnercup-img {
+
+}
+
