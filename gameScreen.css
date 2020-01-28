@@ -22,12 +22,12 @@
     "player3"; 
 }
 
-.gameLeader{
+.gameLeader {
     grid-area: gameLeader;
     font-size: 2rem;
 }
 
-.gameLeader div{
+.gameLeader div {
     background: #084C61;
     color: rgb(149, 174, 180);
     padding:1rem;
@@ -35,7 +35,7 @@
     box-shadow: 2px 2px 4px rgb(130, 189, 158);
 }
 
-.gameLeader h1{
+.gameLeader h1 {
     position: fixed;
     left: 30rem;
     top:0;
@@ -52,12 +52,12 @@
     text-align: center;
 }
 
-.infoScreen{    
+.infoScreen {    
     grid-area: infoScreen;
     font-size: 1.5rem;    
 }
 
-.infoScreen div{
+.infoScreen div {
     background: rgba(255, 255, 255, 0.89);
     padding:1rem;
     width: 32rem;
@@ -83,7 +83,7 @@
     justify-content: center;  
 }
 
-.player img{
+.player img {
     width: 30%;
 }
 
@@ -92,18 +92,33 @@
     display: flex;
     border-radius: 5px;
     margin-right: 0.2rem;
+    max-width: 100%;
+    width: 100%;
+    justify-content: space-evenly;
+    flex-grow: 1
 }
+
+.playerform {
+    justify-content: end; 
+}
+
+
+
 .player2 div:first-child {
     background-color: #4086AB;
     display: flex;
     border-radius: 5px;
     margin-right: 0.2rem;
+    max-width: 100%;
+    width: 100%;
 }
 .player3 div:first-child {
     background-color: #FFB358;
     display: flex;
     border-radius: 5px;
     margin-right: 0.2rem;
+    max-width: 100%;
+    width: 100%;
 }
 
 .player2 {
@@ -118,7 +133,7 @@
 }
 
 
-.player{    
+.player {    
     display:flex;
     /* align-items: center; 
     justify-content: space-evenly; */
@@ -176,7 +191,7 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
-form input:focus{
+form input:focus {
     outline: none;
 }
 
@@ -184,7 +199,7 @@ form button:focus {
     outline: none;
 }
 
-img{
+img {
     border-radius:5px;
 }
 
