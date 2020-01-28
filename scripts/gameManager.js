@@ -12,6 +12,10 @@ class Gamemanager {
   counter;
   lowestNumber;
   highestNumber;
+  snittpot;
+  score;
+  highscore = document.querySelector('.highscore-list');
+  // time = 0;
 
 
   constructor() {
@@ -37,6 +41,7 @@ class Gamemanager {
     if (result < 0) {
       result = 0;
     }
+    console.log(result);
     return result;
   }
 
@@ -61,8 +66,8 @@ class Gamemanager {
     let test;
     test = parseInt(guess)
     console.log("GUESS highnumber() test", test)
-    if(test > this.lowestNumber) {
-        this.lowestNumber = test
+    if (test > this.lowestNumber) {
+      this.lowestNumber = test
     }
 
     console.log(this.lowestNumber);
@@ -76,12 +81,42 @@ class Gamemanager {
     let test;
     test = parseInt(guess)
     console.log("GUESS highnumber() test", test)
-    if(test < this.highestNumber) {
+    if (test < this.highestNumber) {
       this.highestNumber = test
-  }
+    }
     console.log(this.highestNumber);
-    
+
     return this.highestNumber;
+  }
+
+
+  saveTimeScore(time, counter) {
+
+    this.snittpot = time / counter;
+
+    this.score = Math.round((1248 * Math.pow(Math.E, (this.snittpot) / - 5) - 20) * (1 / counter));
+
+    return this.score;
+  }
+
+  getscore() {
+    return this.score;
+  }
+
+
+  saveLocalStorage(name, score) {
+    localStorage.setItem(name, JSON.stringify(score));
+    console.log(localStorage.getItem("Simon"));
+    
+    // if(this.score > localStorage.get(name)) {
+
+    // }
+  
+  }
+
+  getLocalStorage(){
+
+    localStorage.getItem(name, JSON.parse(score))
   }
 
 }

@@ -8,6 +8,12 @@ class Multiplayergame {
     latestUl = document.querySelectorAll('.infoScreen ul li');
     latest = document.querySelector('.infoScreen ul');
     bot;
+    counter1 = 0;
+    counter2 = 0;
+    counter3 = 0;
+    player1time = 0;
+    player1timepot = 0;
+    highscore = 0;
 
     // Player1
     guessBtn1 = document.querySelector('.player1 button');
@@ -64,17 +70,30 @@ class Multiplayergame {
             this.latestGuesses.pop();
             this.latestGuesses.unshift(this.player1input.value);
             this.showLatestGuesses();
-            if (this.player1input.value > 1 && this.player1input.value < 100) {
+            if (this.player1input.value > 0 && this.player1input.value < 101) {
                 if (this.player1input.value == this.answer) {
-                    this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[0]}. The correct number was ${this.answer}.`;
+                    this.counter1++;
+                    if(this.counter1 == 1 && this.player1input.value == this.answer) {
+                        this.player1timepot += Math.ceil(this.player1time);
+                    }
                     this.playerWon = true;
                     this.playerDone = true;
+                    
+                    this.highscore = this.gameManager.saveTimeScore(this.player1timepot, this.counter1);
+                    console.log("highscore", this.highscore);
+                    this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[0]}. The correct number was ${this.answer}. Your score is ` + this.gameManager.getscore();
+                    console.log(this.gameManager.getscore());
+                    this.gameManager.saveLocalStorage(this.playerNames[0], this.gameManager.getscore());
+                    
+
                 } else if (this.player1input.value < this.answer) {
                     this.infoScreen.innerText = `${this.playerNames[0]} guessed too LOW`;
                     this.playerDone = true;
+                    this.counter1++;
                 } else if (this.player1input.value > this.answer) {
                     this.infoScreen.innerText = `${this.playerNames[0]} guessed too HIGH`;
                     this.playerDone = true;
+                    this.counter1++;
                 }
             } else {
                 this.infoScreen.innerText = `${this.playerNames[0]} guessed an invalid number`;
@@ -86,17 +105,20 @@ class Multiplayergame {
             this.latestGuesses.pop();
             this.latestGuesses.unshift(this.player2input.value);
             this.showLatestGuesses();
-            if (this.player2input.value > 1 && this.player2input.value < 100) {
+            if (this.player2input.value > 0 && this.player2input.value < 101) {
                 if (this.player2input.value == this.answer) {
                     this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[1]}. The correct number was ${this.answer}.`;
                     this.playerWon = true;
                     this.playerDone = true;
+                    this.counter2++;
                 } else if (this.player2input.value < this.answer) {
                     this.infoScreen.innerText = `${this.playerNames[1]} guessed too LOW`;
                     this.playerDone = true;
+                    this.counter2++;
                 } else if (this.player2input.value > this.answer) {
                     this.infoScreen.innerText = `${this.playerNames[1]} guessed too HIGH`;
                     this.playerDone = true;
+                    this.counter2++;
                 }
             } else {
                 this.infoScreen.innerText = `${this.playerNames[1]} guessed an invalid number`;
@@ -108,17 +130,20 @@ class Multiplayergame {
             this.latestGuesses.pop();
             this.latestGuesses.unshift(this.player3input.value);
             this.showLatestGuesses();
-            if (this.player3input.value > 1 && this.player3input.value < 100) {
+            if (this.player3input.value > 0 && this.player3input.value < 101) {
                 if (this.player3input.value == this.answer) {
                     this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[2]}. The correct number was ${this.answer}.`;
                     this.playerWon = true;
                     this.playerDone = true;
+                    this.counter3++;
                 } else if (this.player3input.value < this.answer) {
                     this.infoScreen.innerText = `${this.playerNames[2]} guessed too LOW`;
                     this.playerDone = true;
+                    this.counter3++;
                 } else if (this.player3input.value > this.answer) {
                     this.infoScreen.innerText = `${this.playerNames[2]} guessed too HIGH`;
                     this.playerDone = true;
+                    this.counter3++;
                 }
             } else {
                 this.infoScreen.innerText = `${this.playerNames[2]} guessed an invalid number`;
@@ -161,7 +186,7 @@ class Multiplayergame {
     }
 
     player1turn() {
-        
+
         document.getElementById('player1input').focus();
         this.player1frame.style.border = 'solid black 3px';
         this.player2frame.style.border = 'none';
@@ -175,6 +200,11 @@ class Multiplayergame {
             this.player1frame.style.background = `-webkit-linear-gradient(180deg, transparent ${player1timer}%, #FF7D58 ${player1timer}%)`;
             if (player1timer >= 100 || this.playerDone === true) {
                 this.stopPlayer1timer(t);
+                this.player1timepot += Math.ceil(this.player1time);
+                this.player1time = 0;
+            } else {
+                this.player1time += 0.01;
+
             }
         }, 10);
     }
@@ -191,7 +221,7 @@ class Multiplayergame {
     }
 
     player2turn() {
-        
+
         document.getElementById('player2input').focus();
         this.player2frame.style.border = 'solid black 3px';
         this.player1frame.style.border = 'none';
@@ -224,7 +254,7 @@ class Multiplayergame {
     }
 
     player3turn() {
-        
+
         document.getElementById('player3input').focus();
         this.player3frame.style.border = 'solid black 3px';
         this.player2frame.style.border = 'none';
