@@ -71,11 +71,11 @@ class Gamesetting {
         result.id = id;
         result.className = 'playername';
         this.counter++;
-        const avatar = document.createElement('i');
+        const avatar = document.createElement('img');
         if(this.counter == 1) {
-            avatar.className = 'fas fa-user-secret fa-7x';
+            avatar.src = 'img/user-secret-solid.svg';
         } else {
-            avatar.className = 'fas fa-user-astronaut fa-7x';
+            avatar.src = 'img/user-astronaut-solid.svg';
         }
         avatar.setAttribute('aria-hidden', 'true');
         avatar.style.color = colors[this.playersAmount - 1];
