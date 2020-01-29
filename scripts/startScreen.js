@@ -9,6 +9,7 @@ class Startscreen {
   gameManager = new Gamemanager();
   highscore = document.querySelector('.highscore');
   infoIcon = document.querySelector('.hamburger');
+  highscoreList = document.querySelectorAll('.highscore-list')
 
 
 
@@ -59,7 +60,8 @@ class Startscreen {
       highScoreList.style.display = "none";
     } else {
       highScoreList.style.display = "flex";
-      highScoreList.innerHTML = this.gameManager.getLocalStorage();
+      console.log(localStorage.length);
+      this.gameManager.getscore();
     }
 }
 
@@ -70,6 +72,7 @@ class Startscreen {
       infoScreenList.style.display = "none";
     } else {
       infoScreenList.style.display = "flex";
+
     }
   }
 
