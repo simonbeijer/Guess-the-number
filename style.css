@@ -122,6 +122,13 @@ body {
     position: fixed;
     left: 6%;
     top: 5.5%;
+    transition: 0.5s ease-in-out;
+}
+
+.hamburger:hover {
+    color: rgb(33, 75, 52);
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .info-screen {
@@ -138,6 +145,13 @@ body {
     position: fixed;
     right: 5%;
     top: 3%; 
+    transition: 0.5s ease-in-out;
+}
+
+.highscore:hover {
+    color: rgb(33, 75, 52);
+    cursor: pointer;
+    transform: scale(1.1)
 }
 
 .highscore-list{
