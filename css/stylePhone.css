@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css?family=Cute+Font|Squada+One&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: rgb(99,210,151);
+    color: black;
+    height: 100vh;
+    font-family: 'Cute Font', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.justify-center {
+    display: flex;
+    justify-content: center;
+}
+
+
+.new-game-area {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-game {
+
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.new-game-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.game-info {
+    margin-top: 1rem;
+    width: 20rem;
+    color: rgb(33, 75, 52);
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.game-title {
+    text-align: center;
+}
+
+.game-title h1 {
+    font-size: 3rem;
+}
+
+.game-title span {
+    font-size: 4rem;
+    color: rgb(39, 87, 63);
+}
+
+.game-title p {
+    font-size: 2rem;
+}
+
+/* NEW GAME BUTTON */
+.singleplayer, .multiplayer {
+    height: 7rem;
+    width: 50%;
+    background-color: rgb(168, 235, 199);
+    border: 2px solid rgb(92, 92, 92);
+    font-family: 'Cute Font', cursive;
+    border-radius: 10px;
+    color: black;
+    font-size: 2rem;    
+}
+
+.singleplayer-info, .multiplayer-info {
+    height: 16rem;
+    width: 50%;
+    background-color: rgba(83, 88, 86, 0.116);
+    border: 2px solid rgb(92, 92, 92);
+    font-family: 'Cute Font', cursive;
+    border-radius: 10px;
+    color: black;;
+    font-size: 2rem;
+    text-align: center; 
+}
+
+
+.singleplayer:hover, .multiplayer:hover {
+    background-color: rgb(214, 240, 226);
+    cursor: pointer;
+    color: black; 
+}
+
+.singleplayer:active, .multiplayer:active {
+    height: calc(height - 0.2rem);
+    width: calc(width - 0.2rem);
+    outline: none;
+}
+
+.singleplayer:focus, .multiplayer:focus {
+    outline: none;
+}
+
+.hamburger {
+    position: fixed;
+    left: 6%;
+    top: 3%;
+}
+
+.info-screen {
+    display: none;
+    background-color: white;
+    position: fixed;
+    width: 80vw;
+    height: 80vh;
+    border-radius: 16px;
+    z-index: 100;
+}
+
+.highscore {
+    position: fixed;
+    right: 5%;
+    top: 3%; 
+}
+
+.highscore-list{
+    display: none;
+    background-color: white;
+    position: fixed;
+    width: 80vw;
+    height: 80vh;
+    border-radius: 16px;
+    z-index: 100;
+}
+
+.highscore-list ul{
+    font-size: 4rem;
+    list-style-type: none;
+}
+
+.info-screen >* p {
+    font-size: 1.5rem;
+}
+
+.info-screen >* h2 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* DROPDOWN NEW GAME */
+.dropdown-newgame {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    background-color: rgba(255, 255, 255, 0.699);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dropdown-newgame.show {
+    transition: 0.8s ease-in-out;
+    width: 100vw;
+    height: 100vh;
+    opacity: 1;    
+}
+
+.dropdown-newgame h2 {
+    text-align: center;
+    color: rgb(99,210,151);
+    opacity: 0;
+    font-size: 2rem;
+}
+
+.heading-new-game {
+    width: 100%;
+    height: 4.5rem;
+    opacity: 0;
+    border-bottom: 5px solid rgb(99,210,151);
+}
+
+.heading-new-game.fadeIn, .select-opponents.fadeIn, .dropdown-newgame h2.fadeIn {
+    transition: 0.5s;
+    opacity: 1;
+}
+
+.heading-new-game h1 {
+    font-size: 3rem;
+    color: rgb(58, 58, 58);
+}
+
+.select-opponents {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    height: 50%;
+    border-bottom: 5px solid rgb(99,210,151);
+}
+
+.opponent:hover {
+    background-color: rgb(157, 197, 174);
+    cursor: pointer;
+}
+
+.selected {
+    background-color: rgb(157, 197, 174);
+}
+
+.playername {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    margin-top: 50px;
+}
+
+.playername i {
+    height: 100%;
+    padding-right: 0.2rem;
+    padding-left: 0.2rem;
+}
+
+.playername img {
+    height: 6rem;
+    padding-right: 0.2rem;
+    padding-left: 0.2rem;
+}
+
+.playername input {
+    margin-left: 5%;
+    width: 100%;
+    height: 4rem;
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Cute Font', cursive;
+}
+
+.opponent {
+    display: grid;
+    grid-template-columns: 40% 10% 10% 20% 20%;
+    grid-template-rows: 15% 70% 15%;
+    grid-template-areas: 
+    "img . h3 h3 h3"
+    "img . txt txt txt"
+    "img . . diff diff"
+    ;
+    font-family: 'Squada One', cursive;
+    margin-top: 0.5rem;
+    height: 150px;
+    width: 100vw;
+}
+
+.opponent img {
+    height: 100%;
+    border-radius: 5%;
+    grid-area: img;
+    padding-right: 0.2rem;
+    padding-left: 0.2rem;
+}
+
+.opponent h3 {
+    color: rgb(83, 83, 83);
+    font-weight: 300;
+    grid-area: h3;
+    font-size: 1.5rem;
+}
+
+.opponent .info {
+    grid-area: txt;
+    font-size: 1rem;
+}
+
+.difficulty {
+    grid-area: diff;
+}
+
+.hard {
+    color: rgb(156, 26, 26);
+}
+
+.easy {
+    color: rgb(55, 199, 67);
+}
+
+.play-button {
+    grid-area: p;
+}
+
+
+.play {
+    cursor: pointer;
+    color: rgb(99,210,151);
+    opacity: 0;
+    transition: 0.5s;
+    height: 5rem;
+    width: 16rem;
+    background-color: rgb(168, 235, 199);
+    border: 2px solid rgb(92, 92, 92);
+    font-family: 'Cute Font', cursive;
+    border-radius: 10px;
+    color: black;
+    font-size: 3rem;
+    margin-bottom: 50px;
+}
+
+.play:hover {
+    background-color: rgb(214, 240, 226);
+    cursor: pointer;
+    color: black;
+}
+
+.play:active {
+    height: calc(height - 0.2rem);
+    width: calc(width - 0.2rem);
+    outline: none;
+}
+.btn-add-player {
+    padding: 0.5rem 1rem;
+    background-color: rgb(168, 235, 199);
+    border: 2px solid rgb(92, 92, 92);
+    font-family: 'Cute Font', cursive;
+    border-radius: 10px;
+    color: black;;
+    font-size: 2rem;
+}
+
+.btn-add-player:focus {
+    outline: none;
+}
+
+
+.play:focus {
+    outline: none;
+}
