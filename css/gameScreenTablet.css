@@ -1,0 +1,221 @@
+.gamescreen {
+    background-color: rgb(99,210,151);
+    box-sizing: border-box;
+    padding: 0.2rem;
+    margin:0;
+    color: black;
+    height: 100vh;
+    font-family: 'Cute Font', cursive;
+    display: none; 
+    width: 100%;  
+}
+
+.gamescreen.show {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-rows: 10% 2% 20% 20% 20% 20%;
+    grid-template-areas: 
+    "gameLeader"
+    "latest"
+    "infoScreen"
+    "player1"
+    "player2"
+    "player3"; 
+}
+
+.gameLeader {
+    grid-area: gameLeader;
+    font-size: 3.6rem;
+}
+
+.gameLeader div {
+    background: #084C61;
+    color: rgb(149, 174, 180);
+    padding:1rem;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgb(130, 189, 158);
+    width: 15rem;
+    height: 5rem;
+    text-align: center;
+}
+
+.fa-home {
+    position: fixed;
+    left: 12%;
+    top:0;
+    font-size: 2.5rem;
+    color: #084C61;
+    top: 5.5%;
+}
+
+.gameLeader div:hover {
+    cursor: pointer;
+}
+
+.latest {
+    grid-area: latest;
+    text-align: center;
+    font-size: 2rem;
+
+    display: none;
+}
+
+.infoScreen {    
+    grid-area: infoScreen;
+    font-size: 3rem;    
+}
+
+.infoScreen div {
+    background: rgba(255, 255, 255, 0.89);
+    padding:1rem;
+    width: 80%;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgb(130, 189, 158);
+    display: flex;
+    justify-content: space-between;
+}
+
+.infoScreen p {
+    width: 80%;
+}
+
+.infoScreen ul {
+    width: 10%;
+    font-size: 2rem;
+    list-style-type: none;
+    opacity: 1;
+}
+
+.player1 {
+    grid-area: player1;
+    justify-content: center;  
+}
+
+.player img {
+    width: 30%;
+}
+
+.player1 div:first-child {
+    background-color: #FF7D58;
+    display: flex;
+    border-radius: 5px;
+    margin-right: 0.2rem;
+    max-width: 100%;
+    width: 100%;
+    justify-content: space-evenly;
+    flex-grow: 1
+}
+
+.playerform {
+    justify-content: inherit; 
+}
+
+
+
+.player2 div:first-child {
+    background-color: #4086AB;
+    display: flex;
+    border-radius: 5px;
+    margin-right: 0.2rem;
+    max-width: 100%;
+    width: 100%;
+    justify-content: space-evenly;
+    flex-grow: 1
+}
+.player3 div:first-child {
+    background-color: #FFB358;
+    display: flex;
+    border-radius: 5px;
+    margin-right: 0.2rem;
+    max-width: 100%;
+    width: 100%;
+    justify-content: space-evenly;
+    flex-grow: 1
+}
+
+.player2 {
+    grid-area: player2;  
+    justify-content: center;  
+}
+
+
+.player3 {
+    grid-area: player3; 
+    justify-content: center;  
+}
+
+
+.player {    
+    display:flex;
+    /* align-items: center; 
+    justify-content: space-evenly; */
+}
+
+.player p {
+    font-size: 3rem;
+}
+
+form{
+    height:100%;
+    display:flex;
+    /*flex-direction: column;*/
+    justify-content: space-between;
+    align-items: center;
+}
+
+input[type=number]{
+    height: 50%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.781);
+    border: 2px solid rgb(92, 92, 92);
+    font-family: 'Cute Font', cursive;
+    border-radius: 10px;
+    color: black;
+    font-size: 4rem;  
+    text-align: center;
+}
+
+form button {
+    height: 50%;
+    width: 80%;
+    background-color: rgb(168, 235, 199);
+    border: 2px solid rgb(92, 92, 92);
+    font-family: 'Cute Font', cursive;
+    border-radius: 10px;
+    color: black;
+    font-size: 4rem; 
+    opacity: 0.3;   
+}
+
+form button:hover {
+    background-color: rgb(214, 240, 226);
+    cursor: pointer;
+    color: black; 
+}
+
+form button:active {
+    height: calc(50% - 0.2rem);
+    width: calc(40% - 0.2rem);
+    outline: none;
+}
+
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+form input:focus {
+    outline: none;
+}
+
+form button:focus {
+    outline: none;
+}
+
+img {
+    border-radius:5px;
+}
+
+
+
+
+
