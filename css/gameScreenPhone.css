@@ -39,15 +39,6 @@
     text-align: center;
 }
 
-.fa-home {
-    position: fixed;
-    left: 45%;
-    top:0;
-    font-size: 2.5rem;
-    color: #084C61;
-    top: 10%;
-}
-
 .gameLeader div:hover {
     cursor: pointer;
 }
@@ -220,3 +211,32 @@ img {
 
 
 
+@media only screen and (max-width: 400px) {
+
+    .gameLeader div {
+        background: #084C61;
+        color: rgb(149, 174, 180);
+        padding:1rem;
+        margin-top: 100px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 4px rgb(130, 189, 158);
+        width: 50%;
+        height: 2rem;
+        text-align: center;
+    }
+
+    .gamescreen.show {
+        grid-template-rows: 14% 2% 20% 15% 15% 15%;
+    }
+
+    .infoScreen {    
+        font-size: 1.2rem;    
+    }
+    
+    .infoScreen div {
+        background: rgba(255, 255, 255, 0.89);
+        padding:1rem;
+        width: 80%;
+        height: 70%;
+    }
+}

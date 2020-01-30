@@ -118,10 +118,20 @@ body {
     outline: none;
 }
 
+.fa-home {
+    position: fixed;
+    left: 45%;
+    top:0;
+    font-size: 2.5rem;
+    color: #084C61;
+    top: 10%;
+}
+
 .hamburger {
     position: fixed;
     left: 6%;
     top: 3%;
+    z-index: 110;
 }
 
 .info-screen {
@@ -138,6 +148,7 @@ body {
     position: fixed;
     right: 5%;
     top: 3%; 
+    z-index: 110;
 }
 
 .highscore-list{
@@ -351,3 +362,78 @@ body {
 .play:focus {
     outline: none;
 }
+
+@media only screen and (max-width: 400px) {
+    .game-title h1 {
+        font-size: 1.6rem;
+      }
+
+    .info-screen {
+        width: 100vw;
+        height: 100vh;
+    }
+    .info-screen >* p {
+        font-size: 1.3rem;
+        margin: 5px;
+    }
+    .highscore-list{
+        width: 100vw;
+        height: 100vh;
+    }
+    
+    .highscore-list ul{
+        font-size: 2rem;
+    }
+
+    .heading-new-game {
+        display: none;
+    }
+
+    .fa-home {
+        position: fixed;
+        left: 45%;
+        top: 3%;
+        font-size: 2.5rem;
+        color: #084C61;
+    }
+
+    .playername img {
+        margin-left: 5%;
+        margin-top: 30px;
+        height: 4rem;
+    }
+
+    .playername input {
+        margin-left: 5%;
+        width: 100%;
+        height: 3rem;
+        text-align: center;
+        font-size: 3rem;
+        font-family: 'Cute Font', cursive;
+    }
+
+    .opponent {
+        display: grid;
+        grid-template-columns:20% 10% 20% 20%;
+        grid-template-rows: 15% 50% 15%;
+        grid-template-areas: 
+        "img . h3 h3 h3"
+        "img . txt txt txt"
+        "img . . diff diff"
+        ;
+    }
+    
+    .opponent img {
+        height: 60%;
+    }
+
+    #player1 {
+        margin-top: 50px;
+    }
+    #player2 {
+        margin-top: 5px;
+    }
+    #player3 {
+        margin-top: 5px;
+    }
+  }
