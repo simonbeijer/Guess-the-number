@@ -78,12 +78,17 @@ class Multiplayergame {
                     }
                     this.playerWon = true;
                     this.playerDone = true;
-
+                    
                     this.highscore = this.gameManager.saveTimeScore(this.player1timepot, this.counter1);
                     console.log("highscore", this.highscore);
                     this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[0]}. The correct number was ${this.answer}. Your score is ` + this.gameManager.getscore();
                     this.gameManager.savePlayerScore(this.playerNames[0], this.gameManager.getTheScore());
                     // this.gameManager.getscore();
+                    // console.log(this.gameManager.getscore());
+                    // this.gameManager.saveLocalStorage(this.playerNames[0], this.gameManager.getscore());
+
+                    winEffects(this.playerNames[0], 1);
+
                 } else if (this.player1input.value < this.answer) {
                     this.infoScreen.innerText = `${this.playerNames[0]} guessed too LOW`;
                     this.playerDone = true;
@@ -109,6 +114,7 @@ class Multiplayergame {
                     this.playerWon = true;
                     this.playerDone = true;
                     this.counter2++;
+                    winEffects(this.playerNames[1], 2);
                 } else if (this.player2input.value < this.answer) {
                     this.infoScreen.innerText = `${this.playerNames[1]} guessed too LOW`;
                     this.playerDone = true;
@@ -134,6 +140,7 @@ class Multiplayergame {
                     this.playerWon = true;
                     this.playerDone = true;
                     this.counter3++;
+                    winEffects(this.playerNames[2], 3);
                 } else if (this.player3input.value < this.answer) {
                     this.infoScreen.innerText = `${this.playerNames[2]} guessed too LOW`;
                     this.playerDone = true;
