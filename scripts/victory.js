@@ -38,7 +38,7 @@ function winEffects(playerWon, playerNumber) {
         //hide winnercup
         box.remove();
         firework.remove();
-    }, 22 * 1000)
+    }, 18 * 1000)
 }
 
 // source: https://imapo.ru/%d0%bd%d0%be%d0%b2%d0%be%d0%b3%d0%be%d0%b4%d0%bd%d0%b8%d0%b9-%d1%84%d0%b5%d0%b9%d0%b5%d1%80%d0%b2%d0%b5%d1%80%d0%ba-%d0%bd%d0%b0-html5-%d0%b8-jquery/
