@@ -55,6 +55,8 @@ class Multiplayergame {
 
     newGame() {
         this.playerwon = false;
+        this.latestGuesses = [0, 0, 0, 0, 0];
+        this.showLatestGuesses();
         this.latest.style.opacity = 1;
         this.player1Name.innerText = this.playerNames[0];
         this.player2Name.innerText = this.playerNames[1];
@@ -91,7 +93,7 @@ class Multiplayergame {
                         this.player1input.removeEventListener('keydown', this.player1keypress);
                         this.player2input.removeEventListener('keydown', this.player2keypress);
                         this.player3input.removeEventListener('keydown', this.player3keypress);
-                        this.startGameBtn.removeEventListener('click', this.player1turn);
+                        this.startGameBtn.removeEventListener('click', this.player1turn);                        
                         this.gameManager.resetMpGame(this.playerNames);                   
                     } else if (this.player1input.value < this.answer) {
                         this.infoScreen.innerText = `${this.playerNames[0]} guessed too LOW`;
@@ -309,6 +311,7 @@ class Multiplayergame {
         for (let i = 0; i < this.latestGuesses.length; i++) {
             if (this.latestGuesses[i] == 0) {
                 this.latestUl[i].style.color = 'black';
+                this.latestUl[i].innerText = `0`;
             } else if (this.latestGuesses[i] < this.answer) {
                 this.latestUl[i].innerText = `▲ ${this.latestGuesses[i]}`;
                 this.latestUl[i].style.color = 'green';

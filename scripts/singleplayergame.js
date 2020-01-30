@@ -52,6 +52,8 @@ class Singleplayergame {
     }
 
     newGame() {
+        this.latestGuesses = [0, 0, 0, 0, 0];
+        this.showLatestGuesses();
         this.playerwon = false;
         this.latest.style.opacity = 1;
         this.playerNames.push(this.players[2]);
@@ -291,6 +293,7 @@ class Singleplayergame {
         for (let i = 0; i < this.latestGuesses.length; i++) {
             if (this.latestGuesses[i] == 0) {
                 this.latestUl[i].style.color = 'black';
+                this.latestUl[i].innerText = `0`;
             } else if (this.latestGuesses[i] < this.answer) {
                 this.latestUl[i].innerText = `▲ ${this.latestGuesses[i]}`;
                 this.latestUl[i].style.color = 'green';
