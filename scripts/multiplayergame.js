@@ -73,15 +73,17 @@ class Multiplayergame {
             if (this.player1input.value > 0 && this.player1input.value < 101) {
                 if (this.player1input.value == this.answer) {
                     this.counter1++;
-                    if(this.counter1 == 1 && this.player1input.value == this.answer) {
+                    if (this.counter1 == 1 && this.player1input.value == this.answer) {
                         this.player1timepot += Math.ceil(this.player1time);
                     }
                     this.playerWon = true;
                     this.playerDone = true;
-
+                    
                     this.highscore = this.gameManager.saveTimeScore(this.player1timepot, this.counter1);
                     console.log("highscore", this.highscore);
                     this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[0]}. The correct number was ${this.answer}. Your score is ` + this.gameManager.getscore();
+                    this.gameManager.savePlayerScore(this.playerNames[0], this.gameManager.getTheScore());
+                    // this.gameManager.getscore();
                     console.log(this.gameManager.getscore());
                     this.gameManager.saveLocalStorage(this.playerNames[0], this.gameManager.getscore());
 
