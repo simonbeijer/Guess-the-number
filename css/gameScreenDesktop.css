@@ -35,6 +35,11 @@
     box-shadow: 2px 2px 4px rgb(130, 189, 158);
 }
 
+.gameLeader div:hover {
+    color:rgb(11, 125, 160);
+    transform: scale(1.1);
+}
+
 .fa-home {
     position: fixed;
     left: 32%;
@@ -42,6 +47,13 @@
     font-size: 2.5rem;
     color: #084C61;
     top: 5.5%;
+    transition: 0.5s ease-in-out;
+}
+
+.fa-home:hover {
+    color: rgb(7, 55, 70);
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .gameLeader div:hover {
@@ -84,7 +96,7 @@
     justify-content: center;  
 }
 
-.player img {
+.player-img {
     width: 30%;
 }
 
@@ -209,6 +221,30 @@ img {
 }
 
 
+.winnercup {
+    /*background-color: black;*/
+    /*opacity: 0.8;*/
+    height: 100%;
+    width: 200px;
+    position: absolute;
+    top: -20px;
+}
 
+.winnercup img {
+    height: 88%;
+}
+
+
+.firework {
+    /*background-color: grey;*/
+    /*opacity: 0.5;*/
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}
+
+#canvas {
+    background:transparent;
+}
 
 

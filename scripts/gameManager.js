@@ -65,12 +65,9 @@ class Gamemanager {
   lowNumber(guess) {
     let test;
     test = parseInt(guess)
-    console.log("GUESS highnumber() test", test)
     if (test > this.lowestNumber) {
       this.lowestNumber = test
     }
-
-    console.log(this.lowestNumber);
     return this.lowestNumber;
 
 
@@ -80,12 +77,9 @@ class Gamemanager {
   highNumber(guess) {
     let test;
     test = parseInt(guess)
-    console.log("GUESS highnumber() test", test)
     if (test < this.highestNumber) {
       this.highestNumber = test
     }
-    console.log(this.highestNumber);
-
     return this.highestNumber;
   }
 
@@ -99,46 +93,85 @@ class Gamemanager {
     return this.score;
   }
 
+  resetMpGame(playerNames) {    
+    let multiplayergame = new Multiplayergame(playerNames); 
+    multiplayergame.newGame();
+  }
+  resetSpGame(players) {    
+    let singleplayergame = new Singleplayergame(players);
+    singleplayergame.newGame();
+  }
+
+
+  // saveLocalStorage(score) {
+  //   let number;
+  //   number = localStorage.length + 1;
+  //   localStorage.setItem(number, JSON.stringify(score));
+
+  // }
+
+  // getLocalStorage() {
+  //   let theArray = [];
+  //   for (var i = 0; i < localStorage.length; i++){
+  //     theArray.push(localStorage.getItem(localStorage.key(i)));
+  //   }
+  //   console.log("array", theArray);
+
+  // return theArray.sort();
+  // //   if(localStorage.name){
+  // //     alert("Welcome " + localStorage.name)
+  // // }
+  // // this.highscore.innerHTML = this.getscore();
+
+  //   // document.querySelector(".highscore-list").innerHTML = localStorage.getItem(name, JSON.parse(score));
+  //   //localStorage.getItem(name, JSON.parse(score)
+  // }
+
+
+
+
+
+
+  savePlayerScore(name, score) {
+    let getNameAndScore;
+    if (localStorage.getItem('hiscore') === null) {
+      getNameAndScore = [];
+    } else {
+      getNameAndScore = JSON.parse(localStorage.getItem("hiscore"))
+
+    }
+    let hiScoreList = { name: name, score: score }
+    getNameAndScore.push(hiScoreList)
+    getNameAndScore.sort(function (a, b) { return (b.score - a.score) })
+    
+    localStorage.setItem("hiscore", JSON.stringify(getNameAndScore))
+  }
+
+
   getscore() {
+    let getNameAndScore;
+    let highscoreList = document.querySelectorAll('.highscore-list ul li');
+    if (localStorage.getItem('hiscore') === null) {
+      getNameAndScore = [];
+    } else {
+      getNameAndScore = JSON.parse(localStorage.getItem("hiscore"))
+
+    }
+
+    for (let i = 0; i < getNameAndScore.length; i++) {
+      highscoreList[i].innerHTML = `${i + 1}. ${getNameAndScore[i].name + " - score: " + getNameAndScore[i].score}`
+      if (i === 4) {
+        break;
+      }
+    }
+    return getNameAndScore;
+
+  }
+
+
+  getTheScore() {
     return this.score;
   }
-
-
-  saveLocalStorage(name, score) {
-    localStorage.setItem(name, JSON.stringify(score));
-    console.log(localStorage.getItem("Simon"));
-    
-    // if(this.score > localStorage.get(name)) {
-
-    // }
-  
-  }
-
-  getLocalStorage(){
-
-    localStorage.getItem(name, JSON.parse(score))
-  }
-
 }
 
 
-
-// test
-// const generator = new Generator();
-// let answer = generator.getAnswer();
-// console.log(answer);
-
-// answer = generator.getAnswer(55, null);
-// console.log(answer);
-
-// answer = generator.getAnswer(null, 90);
-// console.log(answer);
-
-// answer = generator.getAnswer(55, 2000);
-// console.log(answer);
-
-// answer = generator.getAnswer(1973, 1977);
-// console.log(answer);
-
-// answer = generator.getAnswer(7, 13);
-// console.log(answer);
