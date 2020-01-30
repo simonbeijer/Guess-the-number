@@ -84,8 +84,8 @@ class Multiplayergame {
                     this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[0]}. The correct number was ${this.answer}. Your score is ` + this.gameManager.getscore();
                     this.gameManager.savePlayerScore(this.playerNames[0], this.gameManager.getTheScore());
                     // this.gameManager.getscore();
-                    console.log(this.gameManager.getscore());
-                    this.gameManager.saveLocalStorage(this.playerNames[0], this.gameManager.getscore());
+                    // console.log(this.gameManager.getscore());
+                    // this.gameManager.saveLocalStorage(this.playerNames[0], this.gameManager.getscore());
 
                     winEffects(this.playerNames[0], 1);
 
