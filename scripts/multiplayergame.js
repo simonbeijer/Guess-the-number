@@ -14,6 +14,12 @@ class Multiplayergame {
     player1time = 0;
     player1timepot = 0;
     highscore = 0;
+    player1click;
+    player2click;
+    player3click;
+    player1keypress;
+    player2keypress;
+    player3keypress;
 
     // Player1
     guessBtn1 = document.querySelector('.player1 button');
@@ -48,6 +54,7 @@ class Multiplayergame {
     }
 
     newGame() {
+        this.playerwon = false;
         this.latest.style.opacity = 1;
         this.player1Name.innerText = this.playerNames[0];
         this.player2Name.innerText = this.playerNames[1];
@@ -62,44 +69,49 @@ class Multiplayergame {
             this.player3Image.setAttribute('src', 'img/user-astronaut-solid.svg');
         }
 
-        this.startGameBtn.addEventListener('click', () => {
-            this.player1turn();
-        })
-
-        this.guessBtn1.addEventListener('click', () => {
+        this.player1click = () => {
             this.latestGuesses.pop();
-            this.latestGuesses.unshift(this.player1input.value);
-            this.showLatestGuesses();
-            if (this.player1input.value > 0 && this.player1input.value < 101) {
-                if (this.player1input.value == this.answer) {
-                    this.counter1++;
-                    if (this.counter1 == 1 && this.player1input.value == this.answer) {
-                        this.player1timepot += Math.ceil(this.player1time);
+                this.latestGuesses.unshift(this.player1input.value);
+                this.showLatestGuesses()
+                if (this.player1input.value > 0 && this.player1input.value < 101) {
+                    if (this.player1input.value == this.answer) {
+                        this.counter1++;
+                        if (this.counter1 == 1 && this.player1input.value == this.answer) {
+                            this.player1timepot += Math.ceil(this.player1time);
+                        }
+                        this.playerWon = true;
+                        this.playerDone = true;
+    
+                        this.highscore = this.gameManager.saveTimeScore(this.player1timepot, this.counter1);
+                        this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[0]}. The correct number was ${this.answer}. Your score is ` + this.gameManager.getscore();
+                        this.gameManager.savePlayerScore(this.playerNames[0], this.gameManager.getTheScore()); 
+                        this.guessBtn1.removeEventListener('click', this.player1click);
+                        this.guessBtn2.removeEventListener('click', this.player2click);
+                        this.guessBtn3.removeEventListener('click', this.player3click);
+                        this.player1input.removeEventListener('keydown', this.player1keypress);
+                        this.player2input.removeEventListener('keydown', this.player2keypress);
+                        this.player3input.removeEventListener('keydown', this.player3keypress);
+                        this.startGameBtn.removeEventListener('click', this.player1turn);
+                        this.gameManager.resetMpGame(this.playerNames);                   
+                    } else if (this.player1input.value < this.answer) {
+                        this.infoScreen.innerText = `${this.playerNames[0]} guessed too LOW`;
+                        this.playerDone = true;
+                        this.counter1++;
+                    } else if (this.player1input.value > this.answer) {
+                        this.infoScreen.innerText = `${this.playerNames[0]} guessed too HIGH`;
+                        this.playerDone = true;
+                        this.counter1++;
                     }
-                    this.playerWon = true;
+                } else {
+                    this.infoScreen.innerText = `${this.playerNames[0]} guessed an invalid number`;
                     this.playerDone = true;
-
-                    this.highscore = this.gameManager.saveTimeScore(this.player1timepot, this.counter1);
-                    console.log("highscore", this.highscore);
-                    this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[0]}. The correct number was ${this.answer}. Your score is ` + this.gameManager.getscore();
-                    this.gameManager.savePlayerScore(this.playerNames[0], this.gameManager.getTheScore());
-                    // this.gameManager.getscore();
-                } else if (this.player1input.value < this.answer) {
-                    this.infoScreen.innerText = `${this.playerNames[0]} guessed too LOW`;
-                    this.playerDone = true;
-                    this.counter1++;
-                } else if (this.player1input.value > this.answer) {
-                    this.infoScreen.innerText = `${this.playerNames[0]} guessed too HIGH`;
-                    this.playerDone = true;
-                    this.counter1++;
                 }
-            } else {
-                this.infoScreen.innerText = `${this.playerNames[0]} guessed an invalid number`;
-                this.playerDone = true;
-            }
-            this.player1input.value = '';
-        })
-        this.guessBtn2.addEventListener('click', () => {
+                this.player1input.value = '';
+        }
+
+        this.startGameBtn.addEventListener('click', this.player1turn);
+
+        this.player2click = () => {
             this.latestGuesses.pop();
             this.latestGuesses.unshift(this.player2input.value);
             this.showLatestGuesses();
@@ -123,8 +135,9 @@ class Multiplayergame {
                 this.playerDone = true;
             }
             this.player2input.value = '';
-        })
-        this.guessBtn3.addEventListener('click', () => {
+        }
+
+        this.player3click = () => {
             this.latestGuesses.pop();
             this.latestGuesses.unshift(this.player3input.value);
             this.showLatestGuesses();
@@ -149,7 +162,13 @@ class Multiplayergame {
             }
 
             this.player3input.value = '';
-        })
+        }
+
+        this.guessBtn1.addEventListener('click', this.player1click);
+
+        this.guessBtn2.addEventListener('click', this.player2click);
+
+        this.guessBtn3.addEventListener('click', this.player3click);
 
         window.addEventListener('keyup', e => {
             if (e.keyCode === 76) {
@@ -161,29 +180,35 @@ class Multiplayergame {
             }
         })
 
-        this.player1input.addEventListener('keydown', e => {
+        this.player1keypress = e => {
             if (e.keyCode === 13) {
                 e.preventDefault();
                 this.guessBtn1.click();
             }
-        })
+        }
 
-        this.player2input.addEventListener('keydown', e => {
+        this.player1input.addEventListener('keydown', this.player1keypress);
+       
+        this.player2keypress = e => {
             if (e.keyCode === 13) {
                 e.preventDefault();
                 this.guessBtn2.click();
             }
-        })
+        }
 
-        this.player3input.addEventListener('keydown', e => {
+        this.player2input.addEventListener('keydown', this.player2keypress);
+        
+        this.player3keypress = e => {
             if (e.keyCode === 13) {
                 e.preventDefault();
                 this.guessBtn3.click();
             }
-        })
+        }
+
+        this.player3input.addEventListener('keydown', this.player3keypress);
     }
 
-    player1turn() {
+    player1turn = () => {
 
         document.getElementById('player1input').focus();
         this.player1frame.style.border = 'solid black 3px';
@@ -202,7 +227,6 @@ class Multiplayergame {
                 this.player1time = 0;
             } else {
                 this.player1time += 0.01;
-
             }
         }, 10);
     }

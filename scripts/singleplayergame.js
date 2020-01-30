@@ -12,6 +12,8 @@ class Singleplayergame {
     lowestNumber;
     highestNumber;
     gameOn = false;
+    player1click;
+    player1keypress;
 
 
     // Player1
@@ -42,14 +44,15 @@ class Singleplayergame {
 
     constructor(players) {
         this.players = players;
-        this.gameManager = new Gamemanager();
         this.bot = new Bot();
         this.lowestNumber = 1;
         this.highestNumber = 100;
+        this.gameManager = new Gamemanager();
+        this.answer = this.gameManager.getAnswer(1, 100);
     }
 
     newGame() {
-
+        this.playerwon = false;
         this.latest.style.opacity = 1;
         this.playerNames.push(this.players[2]);
 
@@ -77,18 +80,9 @@ class Singleplayergame {
             this.player3Image.setAttribute('src', 'img/op3selected.png');
         }
 
-        this.startGameBtn.addEventListener('click', () => {
+        this.startGameBtn.addEventListener('click', this.player1turn);
 
-            if (this.gameOn === false) {
-                this.gameOn = true;
-                this.player1turn();
-                this.answer = this.gameManager.getAnswer(1, 100);
-                this.infoScreen.innerText = '';
-            } else {
-            }
-        })
-
-        this.guessBtn1.addEventListener('click', () => {
+        this.player1click = () => {
             this.latestGuesses.pop();
             this.latestGuesses.unshift(this.player1input.value);
             this.showLatestGuesses();
@@ -98,6 +92,10 @@ class Singleplayergame {
                     this.playerWon = true;
                     this.playerDone = true;
                     this.gameOn = false;
+                    this.guessBtn1.removeEventListener('click', this.player1click);
+                    this.player1input.removeEventListener('keydown', this.player1keypress);
+                    this.startGameBtn.removeEventListener('click', this.player1turn);
+                    this.gameManager.resetSpGame(this.players); 
                 } else if (this.player1input.value < this.answer) {
                     this.infoScreen.innerText = `${this.playerNames[0]} guessed too LOW`;
                     this.playerDone = true;
@@ -113,7 +111,9 @@ class Singleplayergame {
                 this.playerDone = true;
             }
             this.player1input.value = '';
-        })
+        }
+        
+        this.guessBtn1.addEventListener('click', this.player1click);
 
         window.addEventListener('keyup', e => {
             if (e.keyCode === 76) {
@@ -125,15 +125,17 @@ class Singleplayergame {
             }
         })
 
-        this.player1input.addEventListener('keydown', e => {
+        this.player1keypress = e => {
             if (e.keyCode === 13) {
                 e.preventDefault();
                 this.guessBtn1.click();
             }
-        })
+        }
+
+        this.player1input.addEventListener('keydown', this.player1keypress);
     }
 
-    player1turn() {
+    player1turn = () => {
         document.getElementById('player1input').focus();
         this.player1frame.style.border = 'solid black 3px';
         this.player2frame.style.border = 'none';

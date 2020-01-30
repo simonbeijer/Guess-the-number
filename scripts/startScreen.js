@@ -60,7 +60,6 @@ class Startscreen {
       highScoreList.style.display = "none";
     } else {
       highScoreList.style.display = "flex";
-      console.log(localStorage.length);
       this.gameManager.getscore();
     }
 }
