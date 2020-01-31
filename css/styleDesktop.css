@@ -244,6 +244,7 @@ body {
     justify-content: space-between;
     height: 130px;
     width: 400px;
+    margin-bottom: 1rem;
 }
 
 .playername i {
@@ -315,6 +316,7 @@ body {
 
 .play-button {
     grid-area: p;
+    margin-bottom: 1rem;
 }
 
 

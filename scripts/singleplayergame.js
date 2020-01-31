@@ -14,6 +14,17 @@ class Singleplayergame {
     gameOn = false;
     player1click;
     player1keypress;
+    highscore = 0;
+    counter1 = 0;
+    player1time = 0;
+    player1timer = 0;
+    player1timepot = 0;
+    
+    counter2 = 0;
+
+    counter3 = 0;
+
+    singleplayer = "SP";
 
 
     // Player1
@@ -90,7 +101,12 @@ class Singleplayergame {
             this.showLatestGuesses();
             if (this.player1input.value > 0 && this.player1input.value < 100) {
                 if (this.player1input.value == this.answer) {
-                    this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[0]}. The correct number was ${this.answer}.`;
+                    this.counter1++;
+                    if (this.counter1 == 1 && this.player1input.value == this.answer) {
+                        this.player1timepot += Math.ceil(this.player1time);
+                    }
+                    this.highscore = this.gameManager.saveTimeScore(this.player1timepot, this.counter1);
+                    this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[0]}. The correct number was ${this.answer}. Your score is ` + this.gameManager.getTheScore()
                     this.playerWon = true;
                     this.playerDone = true;
                     this.gameOn = false;
@@ -98,6 +114,8 @@ class Singleplayergame {
                     this.player1input.removeEventListener('keydown', this.player1keypress);
                     this.startGameBtn.removeEventListener('click', this.player1turn);
                     this.gameManager.resetSpGame(this.players); 
+
+                    this.gameManager.savePlayerScore(this.playerNames[0], this.gameManager.getTheScore(), this.counter1, this.singleplayer);
                 } else if (this.player1input.value < this.answer) {
                     this.infoScreen.innerText = `${this.playerNames[0]} guessed too LOW`;
                     this.playerDone = true;
@@ -151,6 +169,10 @@ class Singleplayergame {
             this.player1frame.style.background = `-webkit-linear-gradient(180deg, transparent ${player1timer}%, #FF7D58 ${player1timer}%)`;
             if (player1timer >= 100 || this.playerDone === true) {
                 this.stopPlayer1timer(t);
+                this.player1timepot += Math.ceil(this.player1time);
+                this.player1time = 0;
+            } else {
+                this.player1time += 0.01;
             }
         }, 10);
     }
@@ -240,6 +262,7 @@ class Singleplayergame {
             this.latestGuesses.unshift(this.player2input.value);
             this.showLatestGuesses();
             if (this.player2input.value == this.answer) {
+                this.counter2++;
                 this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[1]}. The correct number was ${this.answer}.`;
                 this.playerWon = true;
                 this.playerDone = true;
@@ -273,6 +296,7 @@ class Singleplayergame {
             this.latestGuesses.unshift(this.player3input.value);
             this.showLatestGuesses();
             if (this.player3input.value == this.answer) {
+                this.counter3++;
                 this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[2]}. The correct number was ${this.answer}.`;
                 this.playerWon = true;
                 this.playerDone = true;

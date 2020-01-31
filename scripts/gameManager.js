@@ -128,11 +128,7 @@ class Gamemanager {
   // }
 
 
-
-
-
-
-  savePlayerScore(name, score) {
+  savePlayerScore(name, score, counter, type) {
     let getNameAndScore;
     if (localStorage.getItem('hiscore') === null) {
       getNameAndScore = [];
@@ -140,7 +136,7 @@ class Gamemanager {
       getNameAndScore = JSON.parse(localStorage.getItem("hiscore"))
 
     }
-    let hiScoreList = { name: name, score: score }
+    let hiScoreList = { name: name, score: score, counter: counter, type: type }
     getNameAndScore.push(hiScoreList)
     getNameAndScore.sort(function (a, b) { return (b.score - a.score) })
     
@@ -159,7 +155,7 @@ class Gamemanager {
     }
 
     for (let i = 0; i < getNameAndScore.length; i++) {
-      highscoreList[i].innerHTML = `${i + 1}. ${getNameAndScore[i].name + " - score: " + getNameAndScore[i].score}`
+      highscoreList[i].innerHTML = `${i + 1}. ${ "Type " + getNameAndScore[i].type + " " + getNameAndScore[i].name + " - score: " + getNameAndScore[i].score + " - guess " + getNameAndScore[i].counter}`
       if (i === 4) {
         break;
       }

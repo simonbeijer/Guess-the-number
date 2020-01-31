@@ -13,6 +13,10 @@ class Multiplayergame {
     counter3 = 0;
     player1time = 0;
     player1timepot = 0;
+    player2time = 0;
+    player2timepot = 0;
+    player3time = 0;
+    player3timepot = 0;
     highscore = 0;
     player1click;
     player2click;
@@ -20,6 +24,8 @@ class Multiplayergame {
     player1keypress;
     player2keypress;
     player3keypress;
+    multiplayer = "MP";
+
 
     // Player1
     guessBtn1 = document.querySelector('.player1 button');
@@ -85,8 +91,8 @@ class Multiplayergame {
                         this.playerDone = true;
     
                         this.highscore = this.gameManager.saveTimeScore(this.player1timepot, this.counter1);
-                        this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[0]}. The correct number was ${this.answer}. Your score is ` + this.gameManager.getscore();
-                        this.gameManager.savePlayerScore(this.playerNames[0], this.gameManager.getTheScore()); 
+                        this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[0]}. The correct number was ${this.answer}. Your score is ` + this.gameManager.getTheScore();
+                        this.gameManager.savePlayerScore(this.playerNames[0], this.gameManager.getTheScore(), this.counter1, this.multiplayer); 
                         this.guessBtn1.removeEventListener('click', this.player1click);
                         this.guessBtn2.removeEventListener('click', this.player2click);
                         this.guessBtn3.removeEventListener('click', this.player3click);
@@ -119,10 +125,25 @@ class Multiplayergame {
             this.showLatestGuesses();
             if (this.player2input.value > 0 && this.player2input.value < 101) {
                 if (this.player2input.value == this.answer) {
-                    this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[1]}. The correct number was ${this.answer}.`;
+                    this.counter2++;
+                    if (this.counter2 == 1 && this.player2input.value == this.answer) {
+                        this.player2timepot += Math.ceil(this.player2time);
+                    }
+                    
                     this.playerWon = true;
                     this.playerDone = true;
-                    this.counter2++;
+                    
+                    this.highscore = this.gameManager.saveTimeScore(this.player2timepot, this.counter2);
+                    this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[1]}. The correct number was ${this.answer}. Your score is ` + this.gameManager.getTheScore();
+                    this.gameManager.savePlayerScore(this.playerNames[1], this.gameManager.getTheScore(), this.counter2, this.multiplayer); 
+                    this.guessBtn1.removeEventListener('click', this.player1click);
+                    this.guessBtn2.removeEventListener('click', this.player2click);
+                    this.guessBtn3.removeEventListener('click', this.player3click);
+                    this.player1input.removeEventListener('keydown', this.player1keypress);
+                    this.player2input.removeEventListener('keydown', this.player2keypress);
+                    this.player3input.removeEventListener('keydown', this.player3keypress);
+                    this.startGameBtn.removeEventListener('click', this.player1turn);                        
+                    this.gameManager.resetMpGame(this.playerNames); 
                 } else if (this.player2input.value < this.answer) {
                     this.infoScreen.innerText = `${this.playerNames[1]} guessed too LOW`;
                     this.playerDone = true;
@@ -145,10 +166,24 @@ class Multiplayergame {
             this.showLatestGuesses();
             if (this.player3input.value > 0 && this.player3input.value < 101) {
                 if (this.player3input.value == this.answer) {
-                    this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[2]}. The correct number was ${this.answer}.`;
+                    this.counter3++;
+                    if (this.counter3 == 1 && this.player3input.value == this.answer) {
+                        this.player3timepot += Math.ceil(this.player3time);
+                    }
                     this.playerWon = true;
                     this.playerDone = true;
-                    this.counter3++;
+                    
+                    this.highscore = this.gameManager.saveTimeScore(this.player3timepot, this.counter3);
+                    this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[2]}. The correct number was ${this.answer}. Your score is ` + this.gameManager.getTheScore();
+                    this.gameManager.savePlayerScore(this.playerNames[2], this.gameManager.getTheScore(), this.counter3, this.multiplayer); 
+                    this.guessBtn1.removeEventListener('click', this.player1click);
+                    this.guessBtn2.removeEventListener('click', this.player2click);
+                    this.guessBtn3.removeEventListener('click', this.player3click);
+                    this.player1input.removeEventListener('keydown', this.player1keypress);
+                    this.player2input.removeEventListener('keydown', this.player2keypress);
+                    this.player3input.removeEventListener('keydown', this.player3keypress);
+                    this.startGameBtn.removeEventListener('click', this.player1turn);                        
+                    this.gameManager.resetMpGame(this.playerNames);
                 } else if (this.player3input.value < this.answer) {
                     this.infoScreen.innerText = `${this.playerNames[2]} guessed too LOW`;
                     this.playerDone = true;
