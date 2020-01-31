@@ -21,9 +21,16 @@ class Singleplayergame {
     player1timepot = 0;
     
     counter2 = 0;
+    player2time = 0;
+    player2timer = 0;
+    player2timepot = 0;
+    xibit = "Xibit";
 
     counter3 = 0;
-
+    player3time = 0;
+    player3timer = 0;
+    player3timepot = 0;
+    harold = "Harold";
     singleplayer = "SP";
 
 
@@ -105,17 +112,19 @@ class Singleplayergame {
                     if (this.counter1 == 1 && this.player1input.value == this.answer) {
                         this.player1timepot += Math.ceil(this.player1time);
                     }
-                    this.highscore = this.gameManager.saveTimeScore(this.player1timepot, this.counter1);
-                    this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[0]}. The correct number was ${this.answer}. Your score is ` + this.gameManager.getTheScore()
                     this.playerWon = true;
                     this.playerDone = true;
+                    this.highscore = this.gameManager.saveTimeScore(this.player1timepot, this.counter1);
+                    this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[0]}. The correct number was ${this.answer}. Your score is ` + this.gameManager.getTheScore() + `. Guess nr: ${this.counter1}`;
+                    this.gameManager.savePlayerScore(this.playerNames[0], this.gameManager.getTheScore(), this.counter1, this.singleplayer);
+
+                    
                     this.gameOn = false;
                     this.guessBtn1.removeEventListener('click', this.player1click);
                     this.player1input.removeEventListener('keydown', this.player1keypress);
                     this.startGameBtn.removeEventListener('click', this.player1turn);
 
 
-                    this.gameManager.savePlayerScore(this.playerNames[0], this.gameManager.getTheScore(), this.counter1, this.singleplayer);
 
                     this.gameManager.resetSpGame(this.players);
                     winEffects(this.playerNames[0], 1);
@@ -124,15 +133,17 @@ class Singleplayergame {
                     this.infoScreen.innerText = `${this.playerNames[0]} guessed too LOW`;
                     this.playerDone = true;
                     this.lowestNumber = this.gameManager.lowNumber(this.player1input.value);
-
+                    this.counter1++;
                 } else if (this.player1input.value > this.answer) {
                     this.infoScreen.innerText = `${this.playerNames[0]} guessed too HIGH`;
                     this.playerDone = true;
                     this.highestNumber = this.gameManager.highNumber(this.player1input.value);
+                    this.counter1++;
                 }
             } else {
                 this.infoScreen.innerText = `${this.playerNames[0]} guessed an invalid number`;
                 this.playerDone = true;
+                this.counter1++;
             }
             this.player1input.value = '';
         }
@@ -207,6 +218,10 @@ class Singleplayergame {
             this.player2frame.style.background = `-webkit-linear-gradient(180deg, transparent ${player2timer}%, #4086AB ${player2timer}%)`;
             if (player2timer >= 100 || this.playerDone === true) {
                 this.stopPlayer2timer(t);
+                this.player2timepot += Math.ceil(this.player2time);
+                this.player2time = 0;
+            } else {
+                this.player2time += 0.01;
             }
         }, 10);
     }
@@ -240,6 +255,10 @@ class Singleplayergame {
             this.player3frame.style.background = `-webkit-linear-gradient(180deg, transparent ${player3timer}%, #FFB358 ${player3timer}%)`;
             if (player3timer >= 100 || this.playerDone === true) {
                 this.stopPlayer3timer(t);
+                this.player3timepot += Math.ceil(this.player3time);
+                this.player3time = 0;
+            } else {
+                this.player3time += 0.01;
             }
         }, 10);
     }
@@ -267,21 +286,34 @@ class Singleplayergame {
             this.showLatestGuesses();
             if (this.player2input.value == this.answer) {
                 this.counter2++;
-                this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[1]}. The correct number was ${this.answer}.`;
-                this.playerWon = true;
-                this.playerDone = true;
+                if (this.counter2 == 1 && this.player2input.value == this.answer) {
+                    this.player2timepot += Math.ceil(this.player2time);
+                }
+                
+                                this.playerWon = true;
+                                this.playerDone = true;
+                                
+                this.highscore = this.gameManager.saveTimeScore(this.player2timepot, this.counter2);
+                this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[1]}. The correct number was ${this.answer}. Your score is ` + this.gameManager.getTheScore() + `. Guess nr: ${this.counter2}`;
+                this.gameManager.savePlayerScore(this.xibit, this.gameManager.getTheScore(), this.counter2, this.singleplayer); 
+                
                 this.gameOn = false;
+                this.guessBtn1.removeEventListener('click', this.player1click);
+                this.player1input.removeEventListener('keydown', this.player1keypress);
+                this.startGameBtn.removeEventListener('click', this.player1turn);
+                
+                this.gameManager.resetSpGame(this.players);
                 winEffects(this.playerNames[1], 2);
             } else if (this.player2input.value < this.answer) {
                 this.infoScreen.innerText = `${this.playerNames[1]} guessed too LOW`;
                 this.playerDone = true;
                 this.lowestNumber = this.gameManager.lowNumber(this.player2input.value);
-
+                this.counter2++;
             } else if (this.player2input.value > this.answer) {
                 this.infoScreen.innerText = `${this.playerNames[1]} guessed too HIGH`;
                 this.playerDone = true;
                 this.highestNumber = this.gameManager.highNumber(this.player2input.value);
-
+                this.counter2++;
             }
 
         }, randomTime)
@@ -302,10 +334,25 @@ class Singleplayergame {
             this.showLatestGuesses();
             if (this.player3input.value == this.answer) {
                 this.counter3++;
-                this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[2]}. The correct number was ${this.answer}.`;
-                this.playerWon = true;
-                this.playerDone = true;
+                if (this.counter3 == 1 && this.player3input.value == this.answer) {
+                    this.player3timepot += Math.ceil(this.player3time);
+                }
+                
+                                this.playerWon = true;
+                                this.playerDone = true;
+                                
+                this.highscore = this.gameManager.saveTimeScore(this.player3timepot, this.counter3);
+                this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[2]}. The correct number was ${this.answer}. Your score is ` + this.gameManager.getTheScore() + `. Guess nr: ${this.counter3}`;
+                this.gameManager.savePlayerScore(this.harold, this.gameManager.getTheScore(), this.counter3, this.singleplayer); 
+                
+
                 this.gameOn = false;
+                
+                this.guessBtn1.removeEventListener('click', this.player1click);
+                this.player1input.removeEventListener('keydown', this.player1keypress);
+                this.startGameBtn.removeEventListener('click', this.player1turn);
+
+                this.gameManager.resetSpGame(this.players);
                 winEffects(this.playerNames[2], 3);
             } else if (this.player3input.value < this.answer) {
                 this.infoScreen.innerText = `${this.playerNames[2]} guessed too LOW`;
