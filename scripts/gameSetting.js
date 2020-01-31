@@ -18,7 +18,7 @@ class Gamesetting {
 
     openMultiplayerGameSettings(newGameArea, gameTitle) {
         stopSound();
-        playSound('sounds/onload-sound-muptipl-agent007.mp3');
+        playSound('sounds/bensound-dance.mp3');
 
         document.querySelector('.playername input').focus();
         this.playBtn.addEventListener('click', () => {
@@ -96,7 +96,7 @@ class Gamesetting {
 
     openSinglePlayerGameSettings(newGameArea, gameTitle) {
         stopSound();
-        playSound('sounds/onload-sound-singleplay-star-war.mp3');
+        playSound('sounds/bensound-moose.mp3');
 
         document.querySelector('.playername input').focus();
         this.playBtn.addEventListener('click', () => {
