@@ -169,7 +169,7 @@ input[type=number]{
 
 form button {
     height: 50%;
-    width: 80%;
+    width: 100%;
     background-color: rgb(168, 235, 199);
     border: 2px solid rgb(92, 92, 92);
     font-family: 'Cute Font', cursive;
@@ -207,6 +207,33 @@ img {
     border-radius:5px;
 }
 
+.winnercup {
+    /*background-color: black;*/
+    /*opacity: 0.8;*/
+    height: 100%;
+    width: 200px;
+    position: absolute;
+    top: -20px;
+}
+
+.winnercup img {
+    height: 88%;
+}
+
+
+.firework {
+    /*background-color: grey;*/
+    /*opacity: 0.5;*/
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}
+
+#canvas {
+    background:transparent;
+}
+
+
 
 
 
@@ -217,12 +244,14 @@ img {
         background: #084C61;
         color: rgb(149, 174, 180);
         padding:1rem;
-        margin-top: 100px;
+        top: 60px;
         border-radius: 5px;
         box-shadow: 2px 2px 4px rgb(130, 189, 158);
         width: 50%;
-        height: 2rem;
+        height: 1.5rem;
         text-align: center;
+        position: absolute;
+
     }
 
     .gamescreen.show {
