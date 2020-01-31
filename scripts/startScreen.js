@@ -49,7 +49,7 @@ class Startscreen {
       this.hamburgerMenu();
     })
 
-
+    playSound('sounds/onload-general-sound.mp3');
   }
 
   
