@@ -155,7 +155,8 @@ class Gamemanager {
     }
 
     for (let i = 0; i < getNameAndScore.length; i++) {
-      highscoreList[i].innerHTML = `${i + 1}. ${ "Type " + getNameAndScore[i].type + " " + getNameAndScore[i].name + " - score: " + getNameAndScore[i].score + " - guess " + getNameAndScore[i].counter}`
+      highscoreList[i].innerHTML = `${i + 1}. ${
+        getNameAndScore[i].type + ": " + getNameAndScore[i].name + " - score " + getNameAndScore[i].score}`
       if (i === 4) {
         break;
       }

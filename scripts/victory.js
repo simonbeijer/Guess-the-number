@@ -9,7 +9,7 @@ function winEffects(playerWon, playerNumber) {
 
     //insert picture into box
     const img = document.createElement('img');
-    img.src = "img/victory.svg";
+    img.src = "img/medal.svg";
     img.className = 'winnercup-img';
     box.appendChild(img);
 

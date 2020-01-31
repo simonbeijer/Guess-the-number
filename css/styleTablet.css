@@ -350,5 +350,6 @@ body {
 
 
 .play:focus {
-    outline: none;
+ 
+   outline: none;
 }
