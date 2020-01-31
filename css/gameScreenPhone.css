@@ -169,7 +169,7 @@ input[type=number]{
 
 form button {
     height: 50%;
-    width: 80%;
+    width: 100%;
     background-color: rgb(168, 235, 199);
     border: 2px solid rgb(92, 92, 92);
     font-family: 'Cute Font', cursive;
@@ -206,6 +206,33 @@ form button:focus {
 img {
     border-radius:5px;
 }
+
+.winnercup {
+    /*background-color: black;*/
+    /*opacity: 0.8;*/
+    height: 100%;
+    width: 200px;
+    position: absolute;
+    top: -20px;
+}
+
+.winnercup img {
+    height: 88%;
+}
+
+
+.firework {
+    /*background-color: grey;*/
+    /*opacity: 0.5;*/
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}
+
+#canvas {
+    background:transparent;
+}
+
 
 
 
