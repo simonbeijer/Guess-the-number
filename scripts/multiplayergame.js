@@ -183,7 +183,7 @@ class Multiplayergame {
 
                     
                     this.highscore = this.gameManager.saveTimeScore(this.player3timepot, this.counter3);
-                    this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[2]}. The correct number was ${this.answer}. Your score is ` + this.gameManager.getTheScore();
+                    this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[2]}. The correct number was ${this.answer}. Your score is ` + this.gameManager.getTheScore() + `. Guess nr: ${this.counter1}`;
                     this.gameManager.savePlayerScore(this.playerNames[2], this.gameManager.getTheScore(), this.counter3, this.multiplayer); 
                     this.guessBtn1.removeEventListener('click', this.player1click);
                     this.guessBtn2.removeEventListener('click', this.player2click);
