@@ -244,12 +244,14 @@ img {
         background: #084C61;
         color: rgb(149, 174, 180);
         padding:1rem;
-        margin-top: 100px;
+        top: 60px;
         border-radius: 5px;
         box-shadow: 2px 2px 4px rgb(130, 189, 158);
         width: 50%;
-        height: 2rem;
+        height: 1.5rem;
         text-align: center;
+        position: absolute;
+
     }
 
     .gamescreen.show {
