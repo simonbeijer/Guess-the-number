@@ -92,11 +92,9 @@ class Multiplayergame {
     
                         this.highscore = this.gameManager.saveTimeScore(this.player1timepot, this.counter1);
                         this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[0]}. The correct number was ${this.answer}. Your score is ` + this.gameManager.getTheScore();
-<<<<<<< HEAD
+
                         this.gameManager.savePlayerScore(this.playerNames[0], this.gameManager.getTheScore(), this.counter1, this.multiplayer); 
-=======
-                        this.gameManager.savePlayerScore(this.playerNames[0], this.gameManager.getTheScore()); 
->>>>>>> 9bf2ef77005118b285960cffeb9bb822f8bd8eb6
+
                         this.guessBtn1.removeEventListener('click', this.player1click);
                         this.guessBtn2.removeEventListener('click', this.player2click);
                         this.guessBtn3.removeEventListener('click', this.player3click);
@@ -137,7 +135,7 @@ class Multiplayergame {
                     
                     this.playerWon = true;
                     this.playerDone = true;
-<<<<<<< HEAD
+
                     
                     this.highscore = this.gameManager.saveTimeScore(this.player2timepot, this.counter2);
                     this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[1]}. The correct number was ${this.answer}. Your score is ` + this.gameManager.getTheScore();
@@ -150,10 +148,10 @@ class Multiplayergame {
                     this.player3input.removeEventListener('keydown', this.player3keypress);
                     this.startGameBtn.removeEventListener('click', this.player1turn);                        
                     this.gameManager.resetMpGame(this.playerNames); 
-=======
-                    this.counter2++;
+
+                  
                     winEffects(this.playerNames[1], 2);
->>>>>>> 9bf2ef77005118b285960cffeb9bb822f8bd8eb6
+
                 } else if (this.player2input.value < this.answer) {
                     this.infoScreen.innerText = `${this.playerNames[1]} guessed too LOW`;
                     this.playerDone = true;
@@ -182,7 +180,7 @@ class Multiplayergame {
                     }
                     this.playerWon = true;
                     this.playerDone = true;
-<<<<<<< HEAD
+
                     
                     this.highscore = this.gameManager.saveTimeScore(this.player3timepot, this.counter3);
                     this.infoScreen.innerText = `We have a winner!! Congratulations ${this.playerNames[2]}. The correct number was ${this.answer}. Your score is ` + this.gameManager.getTheScore();
@@ -195,10 +193,9 @@ class Multiplayergame {
                     this.player3input.removeEventListener('keydown', this.player3keypress);
                     this.startGameBtn.removeEventListener('click', this.player1turn);                        
                     this.gameManager.resetMpGame(this.playerNames);
-=======
-                    this.counter3++;
+
                     winEffects(this.playerNames[2], 3);
->>>>>>> 9bf2ef77005118b285960cffeb9bb822f8bd8eb6
+
                 } else if (this.player3input.value < this.answer) {
                     this.infoScreen.innerText = `${this.playerNames[2]} guessed too LOW`;
                     this.playerDone = true;

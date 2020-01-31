@@ -113,14 +113,13 @@ class Singleplayergame {
                     this.guessBtn1.removeEventListener('click', this.player1click);
                     this.player1input.removeEventListener('keydown', this.player1keypress);
                     this.startGameBtn.removeEventListener('click', this.player1turn);
-<<<<<<< HEAD
-                    this.gameManager.resetSpGame(this.players); 
+
 
                     this.gameManager.savePlayerScore(this.playerNames[0], this.gameManager.getTheScore(), this.counter1, this.singleplayer);
-=======
+
                     this.gameManager.resetSpGame(this.players);
                     winEffects(this.playerNames[0], 1);
->>>>>>> 9bf2ef77005118b285960cffeb9bb822f8bd8eb6
+
                 } else if (this.player1input.value < this.answer) {
                     this.infoScreen.innerText = `${this.playerNames[0]} guessed too LOW`;
                     this.playerDone = true;
