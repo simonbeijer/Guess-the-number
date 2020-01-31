@@ -7,12 +7,13 @@
 }
 html{
     overflow: hidden;
+    height: 100vh;
 }
 
 body {
     background-color: rgb(99,210,151);
     color: black;
-    height: 100vh;
+    height: 100%;
     font-family: 'Cute Font', cursive;
     display: flex;
     flex-direction: column;
@@ -206,6 +207,7 @@ body {
     width: 100vw;
     height: 100vh;
     opacity: 1;    
+
 }
 
 .dropdown-newgame h2 {
@@ -254,7 +256,7 @@ body {
     display: flex;
     justify-content: center;
     width: 100vw;
-    margin-top: 50px;
+    padding-top: 40px;
 }
 
 .playername i {
@@ -343,7 +345,7 @@ body {
     border-radius: 10px;
     color: black;
     font-size: 3rem;
-    margin-bottom: 50px;
+    margin-bottom: 0px;
 }
 
 .play:hover {
