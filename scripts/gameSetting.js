@@ -17,8 +17,12 @@ class Gamesetting {
     counter = 0;
 
     openMultiplayerGameSettings(newGameArea, gameTitle) {
+        stopSound();
+        playSound('sounds/onload-sound-muptipl-agent007.mp3');
+
         document.querySelector('.playername input').focus();
         this.playBtn.addEventListener('click', () => {
+            stopSound();
             this.gamemode = 'multiplayer';
             let playerInputs = document.querySelectorAll('.playername input');
             let playerNames = [];
@@ -91,8 +95,13 @@ class Gamesetting {
     }
 
     openSinglePlayerGameSettings(newGameArea, gameTitle) {
+        stopSound();
+        playSound('sounds/onload-sound-singleplay-star-war.mp3');
+
         document.querySelector('.playername input').focus();
-        this.playBtn.addEventListener('click', () => { 
+        this.playBtn.addEventListener('click', () => {
+            stopSound();
+
             this.gamemode = 'singleplayer'; 
             let playerName = document.querySelector('.playername input').value; 
             let players = [this.xibitSelected, this.haroldSelected, playerName];        
