@@ -55,6 +55,9 @@ class Startscreen {
   
   highscoreMenu() {
     let highScoreList = document.querySelector('.highscore-list');
+    let infoScreenList = document.querySelector('.info-screen');
+
+    infoScreenList.style.display = "none";
     
     if (highScoreList.style.display === "flex") {
       highScoreList.style.display = "none";
@@ -66,6 +69,9 @@ class Startscreen {
 
   hamburgerMenu() {
     let infoScreenList = document.querySelector('.info-screen');
+    let highScoreList = document.querySelector('.highscore-list');
+
+    highScoreList.style.display = "none";
 
     if (infoScreenList.style.display === "flex") {
       infoScreenList.style.display = "none";
