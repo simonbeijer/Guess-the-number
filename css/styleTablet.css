@@ -120,7 +120,7 @@ body {
 
 .hamburger {
     position: fixed;
-    left: 6%;
+    left: 5.5%;
     top: 5.5%;
 }
 
@@ -136,7 +136,7 @@ body {
 
 .highscore {
     position: fixed;
-    right: 5%;
+    right: 5.5%;
     top: 5.5%; 
 }
 

@@ -49,7 +49,7 @@ class Startscreen {
       this.hamburgerMenu();
     })
 
-
+    playSound('sounds/bensound-jazzyfrenchy.mp3');
   }
 
   
