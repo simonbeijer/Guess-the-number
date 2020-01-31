@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Cute+Font|Squada+One&display=swap');
 
+
 * {
     padding: 0;
     margin: 0;
-    overflow: hidden; 
+}
+html{
+    overflow: hidden;
 }
 
 body {
